@@ -1,0 +1,786 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: specto\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2007-05-29 18:27-0500\n"
+"Last-Translator: Jeff Fortin <nekohayo ~at~ gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Romanian\n"
+
+#: ../data/glade/add_watch.glade.h:1
+msgid "<b>General settings</b>"
+msgstr ""
+
+#: ../data/glade/add_watch.glade.h:2
+#, fuzzy
+msgid "<b>Watch name</b>"
+msgstr "<b>Nume:</b>"
+
+#: ../data/glade/add_watch.glade.h:3
+msgid "Add a Watch"
+msgstr ""
+
+#: ../data/glade/add_watch.glade.h:4
+msgid ""
+"Choose \n"
+"an other name"
+msgstr ""
+
+#: ../data/glade/add_watch.glade.h:6
+#, fuzzy
+msgid ""
+"Edit existing\n"
+"watch"
+msgstr "Editează o urmăreală:"
+
+#: ../data/glade/add_watch.glade.h:8
+#: ../data/glade/edit_watch.glade.h:2
+#, fuzzy
+msgid "Name:"
+msgstr "Nume"
+
+#: ../data/glade/add_watch.glade.h:9
+#: ../data/glade/edit_watch.glade.h:3
+msgid "Refresh Interval:"
+msgstr ""
+
+#: ../data/glade/add_watch.glade.h:10
+#: ../data/glade/edit_watch.glade.h:5
+msgid ""
+"Seconds\n"
+"Minutes\n"
+"Hours\n"
+"Days"
+msgstr ""
+
+#: ../data/glade/add_watch.glade.h:14
+#, fuzzy
+msgid "The watch name is already in use"
+msgstr "editează o urmăreală: deja visibil"
+
+#: ../data/glade/add_watch.glade.h:15
+msgid ""
+"The watch name you specified already exists! Did you mean to modify that existing watch, or did you really want to create a new one?\n"
+"\n"
+"If you want to create a new one, you need to choose a different name."
+msgstr ""
+
+#: ../data/glade/add_watch.glade.h:18
+msgid "Watch Type:"
+msgstr ""
+
+#: ../data/glade/add_watch.glade.h:19
+msgid ""
+"Website\n"
+"Email\n"
+"Files or folders\n"
+"Process\n"
+"Port"
+msgstr ""
+
+#: ../data/glade/edit_watch.glade.h:1
+msgid "Error Log"
+msgstr ""
+
+#: ../data/glade/edit_watch.glade.h:4
+#: ../data/glade/log_dialog.glade.h:9
+msgid "Save As"
+msgstr ""
+
+#: ../data/glade/edit_watch.glade.h:9
+msgid "Watch Settings"
+msgstr ""
+
+#: ../data/glade/import_export.glade.h:1
+msgid "Deselect all"
+msgstr ""
+
+#: ../data/glade/import_export.glade.h:2
+msgid "Select all"
+msgstr ""
+
+#: ../data/glade/log_dialog.glade.h:1
+msgid ""
+"All\n"
+"Debug\n"
+"Info\n"
+"Warning\n"
+"Error\n"
+"Critical"
+msgstr ""
+
+#: ../data/glade/log_dialog.glade.h:7
+#, fuzzy
+msgid "Filter:"
+msgstr "Fișier"
+
+#: ../data/glade/log_dialog.glade.h:8
+msgid "Logs"
+msgstr ""
+
+#: ../data/glade/notifier.glade.h:1
+#, fuzzy
+msgid "By Active"
+msgstr "Activ"
+
+#: ../data/glade/notifier.glade.h:2
+#, fuzzy
+msgid "By Name"
+msgstr "Nume"
+
+#: ../data/glade/notifier.glade.h:3
+msgid "By Watch Type"
+msgstr ""
+
+#: ../data/glade/notifier.glade.h:4
+msgid "Display _All Watches"
+msgstr ""
+
+#: ../data/glade/notifier.glade.h:5
+msgid "Display _Toolbar"
+msgstr ""
+
+#: ../data/glade/notifier.glade.h:6
+msgid "Notifications"
+msgstr ""
+
+#: ../data/glade/notifier.glade.h:7
+msgid "Sorting"
+msgstr ""
+
+#: ../data/glade/notifier.glade.h:8
+msgid "_Clear All"
+msgstr ""
+
+#: ../data/glade/notifier.glade.h:9
+msgid "_Edit"
+msgstr ""
+
+#: ../data/glade/notifier.glade.h:10
+msgid "_Error Log"
+msgstr ""
+
+#: ../data/glade/notifier.glade.h:11
+msgid "_Export Watches"
+msgstr ""
+
+#: ../data/glade/notifier.glade.h:12
+#, fuzzy
+msgid "_File"
+msgstr "Fișier"
+
+#: ../data/glade/notifier.glade.h:13
+msgid "_Help"
+msgstr ""
+
+#: ../data/glade/notifier.glade.h:14
+msgid "_Import Watches"
+msgstr ""
+
+#: ../data/glade/notifier.glade.h:15
+msgid "_View"
+msgstr ""
+
+#: ../data/glade/preferences.glade.h:1
+msgid "<b>Debugging and Logging</b>"
+msgstr ""
+
+#: ../data/glade/preferences.glade.h:2
+#, fuzzy
+msgid "<b>Display</b>"
+msgstr "<b>Nume:</b>"
+
+#: ../data/glade/preferences.glade.h:3
+#, fuzzy
+msgid "<b>Sounds</b>"
+msgstr "<b>Host:</b>"
+
+#: ../data/glade/preferences.glade.h:4
+msgid "A problem occured"
+msgstr ""
+
+#: ../data/glade/preferences.glade.h:5
+#, fuzzy
+msgid "A watch is updated"
+msgstr "Urmăreala \"%s\" updatată!"
+
+#: ../data/glade/preferences.glade.h:6
+msgid "Always show the icon in the notification area"
+msgstr ""
+
+#: ../data/glade/preferences.glade.h:7
+msgid "Display the notification window in the window list"
+msgstr ""
+
+#: ../data/glade/preferences.glade.h:8
+msgid "Duration (in seconds):"
+msgstr ""
+
+#: ../data/glade/preferences.glade.h:9
+msgid "Enable debug mode and logging"
+msgstr ""
+
+#: ../data/glade/preferences.glade.h:10
+msgid "If activated, you will receive more information when running Specto from a terminal, and more information will be printed to the logs."
+msgstr ""
+
+#: ../data/glade/preferences.glade.h:11
+msgid "Pop toasts from the tray icon when a watch is updated"
+msgstr ""
+
+#: ../data/glade/preferences.glade.h:12
+#, fuzzy
+msgid "Preferences"
+msgstr "Preferințe salvate."
+
+#: ../data/glade/preferences.glade.h:13
+msgid "Select a File"
+msgstr ""
+
+#: ../data/glade/preferences.glade.h:14
+msgid "While in debug mode, Specto will provide more information in order to help you diagnose problems. Logging will save all this information to a log file. You can use this to help developers improve Specto."
+msgstr ""
+
+#: ../spectlib/about.py:57
+msgid "translator-credits"
+msgstr "Adrian Petrescu"
+
+#: ../spectlib/add_watch.py:165
+msgid "file"
+msgstr "fișier"
+
+#: ../spectlib/add_watch.py:167
+msgid "folder"
+msgstr "dosar"
+
+#: ../spectlib/add_watch.py:311
+#: ../spectlib/edit_watch.py:207
+msgid "URL:"
+msgstr "URL:"
+
+#: ../spectlib/add_watch.py:325
+#: ../spectlib/edit_watch.py:218
+msgid "Error Margin (%):"
+msgstr "Marja de eroare (%)"
+
+#: ../spectlib/add_watch.py:346
+#: ../spectlib/edit_watch.py:244
+msgid "Protocol:"
+msgstr "Protocol:"
+
+#: ../spectlib/add_watch.py:355
+msgid "POP3"
+msgstr "POP3"
+
+#: ../spectlib/add_watch.py:361
+msgid "IMAP"
+msgstr "IMAP"
+
+#: ../spectlib/add_watch.py:366
+#: ../spectlib/edit_watch.py:318
+msgid "Gmail"
+msgstr "Gmail"
+
+#: ../spectlib/add_watch.py:372
+msgid "User:"
+msgstr "Utilizator:"
+
+#: ../spectlib/add_watch.py:382
+#: ../spectlib/edit_watch.py:266
+msgid "Password:"
+msgstr "Parola:"
+
+#: ../spectlib/add_watch.py:393
+#: ../spectlib/edit_watch.py:278
+msgid "Host:"
+msgstr "Host:"
+
+#: ../spectlib/add_watch.py:403
+#: ../spectlib/edit_watch.py:286
+#, fuzzy
+msgid "Use SSL:"
+msgstr "Utilizator:"
+
+#: ../spectlib/add_watch.py:418
+#: ../spectlib/edit_watch.py:330
+msgid "File/folder:"
+msgstr "Fișier/dosar:"
+
+#: ../spectlib/add_watch.py:428
+#: ../spectlib/edit_watch.py:340
+msgid "File"
+msgstr "Fișier"
+
+#: ../spectlib/add_watch.py:434
+#: ../spectlib/edit_watch.py:345
+msgid "Folder"
+msgstr "Dosar"
+
+#: ../spectlib/add_watch.py:440
+#: ../spectlib/edit_watch.py:351
+msgid "Choose a file or folder"
+msgstr "Alegeți un fișier sau dosar"
+
+#: ../spectlib/add_watch.py:449
+#: ../spectlib/edit_watch.py:370
+msgid "Process:"
+msgstr ""
+
+#: ../spectlib/add_watch.py:464
+#: ../spectlib/edit_watch.py:388
+#, fuzzy
+msgid "Port:"
+msgstr "Host:"
+
+#: ../spectlib/edit_watch.py:66
+msgid "Edit watch: "
+msgstr "Editează o urmăreală:"
+
+#: ../spectlib/edit_watch.py:170
+msgid "Watch : \"%s\" edited."
+msgstr "Urmăreala \"%s\" a fost editată."
+
+#: ../spectlib/edit_watch.py:182
+msgid "removed logs from watch: \"%s\""
+msgstr "recordurile \"%s\" șterse"
+
+#: ../spectlib/edit_watch.py:255
+msgid "Username:"
+msgstr "Nume de utilizator:"
+
+#: ../spectlib/edit_watch.py:294
+msgid "Pop3"
+msgstr "Pop3"
+
+#: ../spectlib/edit_watch.py:306
+msgid "Imap"
+msgstr "Imap"
+
+#: ../spectlib/import_export.py:69
+#: ../spectlib/import_export.py:70
+#, fuzzy
+msgid "Import watches"
+msgstr "Noutăți:\n"
+
+#: ../spectlib/import_export.py:72
+#: ../spectlib/import_export.py:73
+#, fuzzy
+msgid "Export watches"
+msgstr "Noutăți:\n"
+
+#: ../spectlib/import_export.py:84
+#: ../spectlib/notifier.py:612
+msgid "Active"
+msgstr "Activ"
+
+#: ../spectlib/import_export.py:92
+#: ../spectlib/notifier.py:619
+msgid "Type"
+msgstr "Tip"
+
+#: ../spectlib/import_export.py:101
+#: ../spectlib/notifier.py:628
+msgid "Name"
+msgstr "Nume"
+
+#: ../spectlib/import_export.py:110
+#: ../spectlib/notifier.py:637
+msgid "ID"
+msgstr "ID"
+
+#: ../spectlib/import_export.py:117
+#: ../spectlib/notifier.py:644
+msgid "TYPE"
+msgstr "TIP"
+
+#: ../spectlib/main.py:65
+msgid "no GTK, activating console mode"
+msgstr "fără GTK, activez in mod consol"
+
+#: ../spectlib/main.py:155
+msgid "Specto is already running!"
+msgstr "Specto e deja lansat!"
+
+#: ../spectlib/main.py:237
+#: ../spectlib/watch.py:265
+msgid "No updates yet."
+msgstr "Nici un update."
+
+#: ../spectlib/main.py:292
+msgid "watch \"%s\" started"
+msgstr "Urmăreala \"%s\" pornit"
+
+#: ../spectlib/main.py:297
+msgid "watch \"%s\" stopped"
+msgstr "Urmăreala \"%s\" oprită"
+
+#: ../spectlib/main.py:482
+#: ../spectlib/main.py:491
+msgid "notifier: reappear"
+msgstr "notificator: redeschide"
+
+#: ../spectlib/main.py:487
+msgid "notifier: hide"
+msgstr "notificator: ascunde"
+
+#: ../spectlib/main.py:500
+msgid "preferences: create"
+msgstr "preferințe: crează"
+
+#: ../spectlib/main.py:503
+msgid "preferences: reappear"
+msgstr "preferințe: redeschide"
+
+#: ../spectlib/main.py:510
+msgid "error log: create"
+msgstr "record de eroare: crează"
+
+#: ../spectlib/main.py:512
+msgid "error log: already visible"
+msgstr "record de eroare: deja visibil"
+
+#: ../spectlib/main.py:515
+msgid "error log: recreate"
+msgstr "record de eroare: recrează"
+
+#: ../spectlib/main.py:521
+msgid "add watch: create"
+msgstr "adaugă o urmăreală: crează"
+
+#: ../spectlib/main.py:523
+msgid "add watch: already visible"
+msgstr "adaugă o urmăreală: visibil deja"
+
+#: ../spectlib/main.py:526
+msgid "add watch: recreate"
+msgstr "adaugă o urmăreală: recrează"
+
+#: ../spectlib/main.py:540
+msgid "edit watch: create"
+msgstr "editează o urmăreală: crează"
+
+#: ../spectlib/main.py:542
+msgid "edit watch: already visible"
+msgstr "editează o urmăreală: deja visibil"
+
+#: ../spectlib/main.py:545
+msgid "edit watch: recreate"
+msgstr "editează o urmăreală: recrează"
+
+#: ../spectlib/main.py:578
+msgid "Cannot quit yet"
+msgstr ""
+
+#: ../spectlib/main.py:582
+msgid "Murder!"
+msgstr ""
+
+#: ../spectlib/main.py:593
+msgid ""
+"<b><big>Specto is currently busy and cannot quit yet.</big></b>\n"
+"\n"
+"This may be because it is checking for watch updates.\n"
+"However, you can try forcing it to quit by clicking the murder button."
+msgstr ""
+
+#: ../spectlib/notifier.py:323
+msgid "The network connection seems to be down, watches will not update until then."
+msgstr ""
+
+#: ../spectlib/notifier.py:382
+msgid "gmail <i>(%s unread)</i>"
+msgstr "gmail <i>(%s necitit)</i>"
+
+#: ../spectlib/notifier.py:442
+msgid "watch \"%s\" opened"
+msgstr "urmăreala \"%s\" deschisă"
+
+#: ../spectlib/notifier.py:481
+msgid "You can add all kinds of websites as watches. Static pages, RSS or Atom feeds, etc. Specto will automatically handle them."
+msgstr "Puteți adauga multe feluri de website-uri ca urmăreli. Pagini statici, șiruri RSS sau Atom, etc., vor fi manajate de Specto automat."
+
+#: ../spectlib/notifier.py:482
+msgid "Website watches can use an error margin that allows you to set a minimum difference percentage. This allows you to adapt to websites that change constantly or have lots of advertising."
+msgstr "Urmăreli de website pot avea marje de eroare care vă lasă să setați un procentaj de diferența minimă. Asta vă lasă să adaptați la website-uri care se schimb constant, sau care au multe reclame."
+
+#: ../spectlib/notifier.py:483
+msgid "Single-click an existing watch to display information, and double-click it to open the content."
+msgstr "Clicați odată pe o urmăreală pentru a verifica informația, sau de doua ori pentru a deschide conținutul."
+
+#: ../spectlib/notifier.py:484
+msgid "Please set a reasonable refresh interval in order to save bandwidth and prevent you from being blocked from content providers."
+msgstr "Vă rog să setați o intervală de refresh resonabila, ca să salvăm bandwidth si ca să nu fiim blocați de la content."
+
+#: ../spectlib/notifier.py:544
+msgid "notifier: size set"
+msgstr "notificator: mărime setat"
+
+#: ../spectlib/notifier.py:546
+msgid "notifier: size not set"
+msgstr "notificator: mărime nu e setată"
+
+#: ../spectlib/notifier.py:550
+msgid "notifier: position set"
+msgstr "notificator: posiție setat"
+
+#: ../spectlib/notifier.py:552
+msgid "notifier: position not set"
+msgstr "notificator: posiția nu e setată"
+
+#: ../spectlib/notifier.py:657
+msgid "Tip of the Day:"
+msgstr "Tipul zilei"
+
+#: ../spectlib/notifier.py:675
+#: ../spectlib/notifier.py:730
+#: ../spectlib/notifier.py:785
+#: ../spectlib/notifier.py:828
+#: ../spectlib/notifier.py:873
+msgid "<b>Name:</b>"
+msgstr "<b>Nume:</b>"
+
+#: ../spectlib/notifier.py:687
+#: ../spectlib/notifier.py:742
+#: ../spectlib/notifier.py:797
+#: ../spectlib/notifier.py:840
+#: ../spectlib/notifier.py:885
+msgid "<b>Last Updated:</b>"
+msgstr "</b>Ultima schimbare:</b>"
+
+#: ../spectlib/notifier.py:699
+msgid "<b>Location:</b>"
+msgstr "<b>Locație:</b>"
+
+#: ../spectlib/notifier.py:711
+msgid "<b>Error Margin:</b>"
+msgstr "<b>Marja de Eroare:</b>"
+
+#: ../spectlib/notifier.py:754
+msgid "<b>Host:</b>"
+msgstr "<b>Host:</b>"
+
+#: ../spectlib/notifier.py:766
+msgid "<b>Username:</b>"
+msgstr "<b>Nume de Utilizator:</b>"
+
+#: ../spectlib/notifier.py:809
+msgid "<b>File/folder:</b>"
+msgstr "<b>Fișier/dosar:</b>"
+
+#: ../spectlib/notifier.py:852
+#, fuzzy
+msgid "<b>Process:</b>"
+msgstr "<b>Host:</b>"
+
+#: ../spectlib/notifier.py:897
+#, fuzzy
+msgid "<b>Port:</b>"
+msgstr "<b>Host:</b>"
+
+#: ../spectlib/preferences.py:98
+msgid "Preferences saved."
+msgstr "Preferințe salvate."
+
+#: ../spectlib/trayicon.py:75
+msgid "No updated watches."
+msgstr "Nici o noutate."
+
+#: ../spectlib/trayicon.py:77
+msgid "Updated watches:\n"
+msgstr "Noutăți:\n"
+
+#: ../spectlib/trayicon.py:79
+#, fuzzy
+msgid "website"
+msgstr " website"
+
+#: ../spectlib/trayicon.py:79
+#, fuzzy
+msgid "websites"
+msgstr " website-uri"
+
+#: ../spectlib/trayicon.py:85
+msgid "mail account"
+msgstr ""
+
+#: ../spectlib/trayicon.py:85
+msgid "mail accounts"
+msgstr ""
+
+#: ../spectlib/trayicon.py:93
+#, fuzzy
+msgid "file/folder"
+msgstr " Fișier/Dosare:"
+
+#: ../spectlib/trayicon.py:93
+#, fuzzy
+msgid "files/folders"
+msgstr " Fișiere/Dosare:"
+
+#: ../spectlib/trayicon.py:100
+msgid "process"
+msgstr ""
+
+#: ../spectlib/trayicon.py:100
+msgid "processes"
+msgstr ""
+
+#: ../spectlib/trayicon.py:108
+msgid "port"
+msgstr ""
+
+#: ../spectlib/trayicon.py:108
+msgid "ports"
+msgstr ""
+
+#: ../spectlib/trayicon.py:143
+msgid "Hide window"
+msgstr "Ascunde jeamul"
+
+#: ../spectlib/trayicon.py:145
+msgid "Show window"
+msgstr "Arată jeamul"
+
+#: ../spectlib/watch.py:63
+msgid "The watch, <b>%s</b>, has a problem. You may need to check the error log."
+msgstr ""
+
+#: ../spectlib/watch.py:70
+msgid "Watch \"%s\" is already marked as updated in the notifier"
+msgstr ""
+
+#: ../spectlib/watch.py:85
+msgid "Watch \"%s\" updated!"
+msgstr "Urmăreala \"%s\" updatată!"
+
+#: ../spectlib/watch.py:98
+msgid "The website, <b>%s</b>, has been updated."
+msgstr "Website-ul <b>%s</b> a fost updatat."
+
+#: ../spectlib/watch.py:104
+#: ../spectlib/watch.py:113
+msgid "Your email account, <b>%s</b>, has <b>%d</b> new mail."
+msgstr "Contul <b>%s</b> are <b>%d</b> mesaje noi."
+
+#: ../spectlib/watch.py:106
+#: ../spectlib/watch.py:115
+msgid "Your email account, <b>%s</b>, has <b>%d</b> new unread mails, totalling %s"
+msgstr "Contul <b>%s</b> are <b>%d</b> mesaje noi, cu un total de %s"
+
+#: ../spectlib/watch.py:109
+msgid "Your email account, <b>%s</b>, has new mail."
+msgstr "Aveți mesaje noi pe contul <b>%s</b>."
+
+#: ../spectlib/watch.py:122
+msgid "The file/folder, <b>%s</b>, has been updated."
+msgstr "Fișierul/Dosar <b>%s</b> a fost updatat."
+
+#: ../spectlib/watch.py:125
+#, fuzzy
+msgid "The process, <b>%s</b>, has stopped."
+msgstr "Website-ul <b>%s</b> a fost updatat."
+
+#: ../spectlib/watch.py:127
+#, fuzzy
+msgid "The process, <b>%s</b>, has started."
+msgstr "Website-ul <b>%s</b> a fost updatat."
+
+#: ../spectlib/watch.py:132
+#, fuzzy
+msgid "The connection, <b>%s</b>, was closed."
+msgstr "Website-ul <b>%s</b> a fost updatat."
+
+#: ../spectlib/watch.py:134
+#, fuzzy
+msgid "The connection, <b>%s</b>, was established."
+msgstr "Website-ul <b>%s</b> a fost updatat."
+
+#: ../spectlib/watch.py:138
+msgid "Not implemented yet"
+msgstr "Ne-implementat"
+
+#: ../spectlib/watch_file.py:43
+msgid "Unknown File Watch"
+msgstr "Urmăreală de fișier necunoscut."
+
+#: ../spectlib/watch_file.py:77
+#: ../spectlib/watch_mail_gmail.py:87
+#: ../spectlib/watch_mail_imap.py:83
+#: ../spectlib/watch_mail_pop3.py:94
+#: ../spectlib/watch_port.py:70
+#: ../spectlib/watch_process.py:71
+#: ../spectlib/watch_web_static.py:101
+msgid "Updating watch: \"%s\""
+msgstr "Updatez Urmăreala: \"%s\""
+
+#: ../spectlib/watch_file.py:100
+#: ../spectlib/watch_port.py:83
+#: ../spectlib/watch_process.py:85
+msgid "Watch: \"%s\" has an error"
+msgstr "Urmăreala \"%s\" are o eroare"
+
+#: ../spectlib/watch_file.py:115
+msgid "update: %s was modified"
+msgstr "Urmăreala %s a fost modificată"
+
+#: ../spectlib/watch_file.py:120
+msgid "update: %s was created"
+msgstr "update: %s a fost creat"
+
+#: ../spectlib/watch_file.py:134
+msgid "Skipping %s"
+msgstr "Sar %s"
+
+#: ../spectlib/watch_file.py:143
+msgid "update: %s removed"
+msgstr "update: %s șters"
+
+#: ../spectlib/watch_mail_gmail.py:44
+#: ../spectlib/watch_mail_imap.py:42
+#: ../spectlib/watch_mail_pop3.py:46
+msgid "Unknown Mail Watch"
+msgstr "Urmăreală de poștă necunoscută"
+
+#: ../spectlib/watch_mail_gmail.py:76
+#: ../spectlib/watch_mail_imap.py:73
+#: ../spectlib/watch_mail_pop3.py:83
+#: ../spectlib/watch_web_static.py:89
+msgid "No network connection detected"
+msgstr ""
+
+#: ../spectlib/watch_mail_gmail.py:108
+msgid "Watch: \"%s\" has error: wrong username/password"
+msgstr "Urmăreala: \"%s\" are o eroare: utilizator/parola incorectă"
+
+#: ../spectlib/watch_mail_imap.py:92
+#: ../spectlib/watch_mail_imap.py:116
+msgid "Watch: \"%s\" has error: %s"
+msgstr "Urmăreala: \"%s\" are o eroare: %s"
+
+#: ../spectlib/watch_mail_imap.py:105
+msgid "Mailbox does not exist"
+msgstr "Cutia de poștă nu există"
+
+#: ../spectlib/watch_mail_pop3.py:103
+#: ../spectlib/watch_mail_pop3.py:132
+#: ../spectlib/watch_web_static.py:121
+msgid "Watch: \"%s\" has error: "
+msgstr "Urmăreala: \"%s\" are o eroare: "
+
+#: ../spectlib/watch_port.py:38
+#: ../spectlib/watch_process.py:39
+#, fuzzy
+msgid "Unknown Process Watch"
+msgstr "Urmăreală de fișier necunoscut."
+
+#: ../spectlib/watch_web_static.py:62
+msgid "Watch: \"%s\" has error: empty url"
+msgstr "Urmăreala: \"%s\" are o eroare: url gol"
+
+#: ../spectlib/watch_web_static.py:180
+msgid "Difference percentage:%s (Watch: \"%s\")"
+msgstr "Procentaj de diferență:%s (Urmăreala: \"%s\")"
+

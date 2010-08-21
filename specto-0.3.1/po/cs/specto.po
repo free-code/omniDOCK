@@ -1,0 +1,800 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Specto\n"
+"POT-Creation-Date: Tue May 29 18:06:54 2007\n"
+"PO-Revision-Date: 2007-07-12 00:52-0500\n"
+"Last-Translator: Jeff Fortin <nekohayo ~at~ gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.4\n"
+"X-Poedit-Language: Czech\n"
+"X-Poedit-Country: CZECH REPUBLIC\n"
+
+#: ../data/glade/add_watch.glade.h:1
+msgid "<b>General settings</b>"
+msgstr "<b>Obecné volby</b>"
+
+#: ../data/glade/add_watch.glade.h:2
+msgid "<b>Watch name</b>"
+msgstr "<b>Jméno sledování</b>"
+
+#: ../data/glade/add_watch.glade.h:3
+msgid "Add a Watch"
+msgstr "Přidat sledování"
+
+#: ../data/glade/add_watch.glade.h:4
+msgid ""
+"Choose \n"
+"an other name"
+msgstr ""
+"Zvolte \n"
+"jiné jméno"
+
+#: ../data/glade/add_watch.glade.h:6
+msgid ""
+"Edit existing\n"
+"watch"
+msgstr ""
+"Upravit existující\n"
+"sledování"
+
+#: ../data/glade/add_watch.glade.h:8
+#: ../data/glade/edit_watch.glade.h:2
+msgid "Name:"
+msgstr "Jméno:"
+
+#: ../data/glade/add_watch.glade.h:9
+#: ../data/glade/edit_watch.glade.h:3
+msgid "Refresh Interval:"
+msgstr "Obnovovací interval:"
+
+#: ../data/glade/add_watch.glade.h:10
+#: ../data/glade/edit_watch.glade.h:5
+msgid ""
+"Seconds\n"
+"Minutes\n"
+"Hours\n"
+"Days"
+msgstr ""
+"Sekund\n"
+"Minut\n"
+"Hodin\n"
+"Dní"
+
+#: ../data/glade/add_watch.glade.h:14
+msgid "The watch name is already in use"
+msgstr "Jméno sledování je již používáno"
+
+#: ../data/glade/add_watch.glade.h:15
+msgid ""
+"The watch name you specified already exists! Did you mean to modify that existing watch, or did you really want to create a new one?\n"
+"\n"
+"If you want to create a new one, you need to choose a different name."
+msgstr ""
+"Jméno sledování, které jste specifikovali již existuje! Chtěli jste modifikovat toto existující sledování, nebo jste skutečně chtěli vytvořit nové?\n"
+"\n"
+"Pokud chcete vytvořit nové, musíte zvolit jiné jméno."
+
+#: ../data/glade/add_watch.glade.h:18
+msgid "Watch Type:"
+msgstr "Typ sledování:"
+
+#: ../data/glade/add_watch.glade.h:19
+msgid ""
+"Website\n"
+"Email\n"
+"Files or folders\n"
+"Process\n"
+"Port"
+msgstr ""
+"Webstránka\n"
+"E-mail\n"
+"Soubor či složka\n"
+"Proces\n"
+"Port"
+
+#: ../data/glade/edit_watch.glade.h:1
+msgid "Error Log"
+msgstr "Chybový záznam"
+
+#: ../data/glade/edit_watch.glade.h:4
+#: ../data/glade/log_dialog.glade.h:9
+msgid "Save As"
+msgstr "Uložit jako"
+
+#: ../data/glade/edit_watch.glade.h:9
+msgid "Watch Settings"
+msgstr "Nastavení sledování"
+
+#: ../data/glade/import_export.glade.h:1
+msgid "Deselect all"
+msgstr "Nevybrat nic"
+
+#: ../data/glade/import_export.glade.h:2
+msgid "Select all"
+msgstr "Vybrat vše"
+
+#: ../data/glade/log_dialog.glade.h:1
+msgid ""
+"All\n"
+"Debug\n"
+"Info\n"
+"Warning\n"
+"Error\n"
+"Critical"
+msgstr ""
+"Všechny\n"
+"Ladící\n"
+"Informační\n"
+"Varování\n"
+"Chyby\n"
+"Kritické"
+
+#: ../data/glade/log_dialog.glade.h:7
+msgid "Filter:"
+msgstr "Filtr:"
+
+#: ../data/glade/log_dialog.glade.h:8
+msgid "Logs"
+msgstr "Záznamy"
+
+#: ../data/glade/notifier.glade.h:1
+msgid "By Active"
+msgstr "Podle aktivity"
+
+#: ../data/glade/notifier.glade.h:2
+msgid "By Name"
+msgstr "Podle jména"
+
+#: ../data/glade/notifier.glade.h:3
+msgid "By Watch Type"
+msgstr "Podle typu sledování"
+
+#: ../data/glade/notifier.glade.h:4
+msgid "Display _All Watches"
+msgstr "Zobrazit _všechna sledování"
+
+#: ../data/glade/notifier.glade.h:5
+msgid "Display _Toolbar"
+msgstr "Zobrazit _lištu nástrojů"
+
+#: ../data/glade/notifier.glade.h:6
+msgid "Notifications"
+msgstr "Upozornění"
+
+#: ../data/glade/notifier.glade.h:7
+msgid "Sorting"
+msgstr "Řazení"
+
+#: ../data/glade/notifier.glade.h:8
+msgid "_Clear All"
+msgstr "_Vyčistit vše"
+
+#: ../data/glade/notifier.glade.h:9
+msgid "_Edit"
+msgstr "_Upravit"
+
+#: ../data/glade/notifier.glade.h:10
+msgid "_Error Log"
+msgstr "_Chybový záznam"
+
+#: ../data/glade/notifier.glade.h:11
+msgid "_Export Watches"
+msgstr "_Exportovat sledování"
+
+#: ../data/glade/notifier.glade.h:12
+msgid "_File"
+msgstr "_Soubor"
+
+#: ../data/glade/notifier.glade.h:13
+msgid "_Help"
+msgstr "_Nápověda"
+
+#: ../data/glade/notifier.glade.h:14
+msgid "_Import Watches"
+msgstr "_Importovat sledování"
+
+#: ../data/glade/notifier.glade.h:15
+msgid "_View"
+msgstr "_Zobrazit"
+
+#: ../data/glade/preferences.glade.h:1
+msgid "<b>Debugging and Logging</b>"
+msgstr "<b>Ladění a zaznamenávání</b>"
+
+#: ../data/glade/preferences.glade.h:2
+msgid "<b>Display</b>"
+msgstr "<b>Zobrazení</b>"
+
+#: ../data/glade/preferences.glade.h:3
+msgid "<b>Sounds</b>"
+msgstr "<b>Zvuky</b>"
+
+#: ../data/glade/preferences.glade.h:4
+msgid "A problem occured"
+msgstr "Došlo k problému"
+
+#: ../data/glade/preferences.glade.h:5
+msgid "A watch is updated"
+msgstr "Sledovaný objekt je aktualizován"
+
+#: ../data/glade/preferences.glade.h:6
+msgid "Always show the icon in the notification area"
+msgstr "Vždy zobrazovat ikonu v oznamovací oblasti"
+
+#: ../data/glade/preferences.glade.h:7
+msgid "Display the notification window in the window list"
+msgstr "Zobrazovat upozorňovací okno v seznamu oken."
+
+#: ../data/glade/preferences.glade.h:8
+msgid "Duration (in seconds):"
+msgstr "Doba trvání (v sekundách):"
+
+#: ../data/glade/preferences.glade.h:9
+msgid "Enable debug mode and logging"
+msgstr "Zapnout ladící mód a zaznamenávání"
+
+#: ../data/glade/preferences.glade.h:10
+msgid "If activated, you will receive more information when running Specto from a terminal, and more information will be printed to the logs."
+msgstr "Je-li aktivováno, obdržíte více informací při spuštění Specto z terminálu a více informací bude vypsáno do záznamů."
+
+#: ../data/glade/preferences.glade.h:11
+msgid "Pop toasts from the tray icon when a watch is updated"
+msgstr "Upozornit vyskakovací bublinou z oznamovací oblasti, je-li sledovaný objekt aktualizován."
+
+#: ../data/glade/preferences.glade.h:12
+msgid "Preferences"
+msgstr "Předvolby"
+
+#: ../data/glade/preferences.glade.h:13
+msgid "Select a File"
+msgstr "Zvolte soubor"
+
+#: ../data/glade/preferences.glade.h:14
+msgid "While in debug mode, Specto will provide more information in order to help you diagnose problems. Logging will save all this information to a log file. You can use this to help developers improve Specto."
+msgstr "Je-li v ladícím módu, Specto bude poskytovat více informací za účelem pomoci vám diagnostikovat potíže. Zaznamenávání uloží všechny tyto informace do souboru se záznamem. Můžete to použít pro pomoc vývojářům zlepšit Specto."
+
+#: ../spectlib/about.py:57
+msgid "translator-credits"
+msgstr "Oldřich Šmehlík <oldrich AT smehlik.net>"
+
+#: ../spectlib/add_watch.py:165
+msgid "file"
+msgstr "soubor"
+
+#: ../spectlib/add_watch.py:167
+msgid "folder"
+msgstr "adresář"
+
+#: ../spectlib/add_watch.py:311
+#: ../spectlib/edit_watch.py:207
+msgid "URL:"
+msgstr "URL:"
+
+#: ../spectlib/add_watch.py:325
+#: ../spectlib/edit_watch.py:218
+msgid "Error Margin (%):"
+msgstr "Tolerovaná míra změny (%):"
+
+#: ../spectlib/add_watch.py:346
+#: ../spectlib/edit_watch.py:244
+msgid "Protocol:"
+msgstr "Protokol:"
+
+#: ../spectlib/add_watch.py:355
+msgid "POP3"
+msgstr "POP3"
+
+#: ../spectlib/add_watch.py:361
+msgid "IMAP"
+msgstr "IMAP"
+
+#: ../spectlib/add_watch.py:366
+#: ../spectlib/edit_watch.py:318
+msgid "Gmail"
+msgstr "Gmail"
+
+#: ../spectlib/add_watch.py:372
+msgid "User:"
+msgstr "Uživatel:"
+
+#: ../spectlib/add_watch.py:382
+#: ../spectlib/edit_watch.py:266
+msgid "Password:"
+msgstr "Heslo:"
+
+#: ../spectlib/add_watch.py:393
+#: ../spectlib/edit_watch.py:278
+msgid "Host:"
+msgstr "Počítač:"
+
+#: ../spectlib/add_watch.py:403
+#: ../spectlib/edit_watch.py:286
+msgid "Use SSL:"
+msgstr "Použít SSL:"
+
+#: ../spectlib/add_watch.py:418
+#: ../spectlib/edit_watch.py:330
+msgid "File/folder:"
+msgstr "Soubor/adresář:"
+
+#: ../spectlib/add_watch.py:428
+#: ../spectlib/edit_watch.py:340
+msgid "File"
+msgstr "Soubor"
+
+#: ../spectlib/add_watch.py:434
+#: ../spectlib/edit_watch.py:345
+msgid "Folder"
+msgstr "Adresář"
+
+#: ../spectlib/add_watch.py:440
+#: ../spectlib/edit_watch.py:351
+msgid "Choose a file or folder"
+msgstr "Zvolte soubor či adresář"
+
+#: ../spectlib/add_watch.py:449
+#: ../spectlib/edit_watch.py:370
+msgid "Process:"
+msgstr "Proces:"
+
+#: ../spectlib/add_watch.py:464
+#: ../spectlib/edit_watch.py:388
+msgid "Port:"
+msgstr "Port:"
+
+#: ../spectlib/edit_watch.py:66
+msgid "Edit watch: "
+msgstr "Upravit sledování: "
+
+#: ../spectlib/edit_watch.py:170
+msgid "Watch : \"%s\" edited."
+msgstr "Sledování: \"%s\" upraveno."
+
+#: ../spectlib/edit_watch.py:182
+msgid "removed logs from watch: \"%s\""
+msgstr "odstraněny záznamy ze sledování: \"%s\""
+
+#: ../spectlib/edit_watch.py:255
+msgid "Username:"
+msgstr "Uživatelské jméno:"
+
+#: ../spectlib/edit_watch.py:294
+msgid "Pop3"
+msgstr "Pop3"
+
+#: ../spectlib/edit_watch.py:306
+msgid "Imap"
+msgstr "Imap"
+
+#: ../spectlib/import_export.py:69
+#: ../spectlib/import_export.py:70
+msgid "Import watches"
+msgstr "Importovat sledování"
+
+#: ../spectlib/import_export.py:72
+#: ../spectlib/import_export.py:73
+msgid "Export watches"
+msgstr "Exportovat sledování"
+
+#: ../spectlib/import_export.py:84
+#: ../spectlib/notifier.py:612
+msgid "Active"
+msgstr "Aktivní"
+
+#: ../spectlib/import_export.py:92
+#: ../spectlib/notifier.py:619
+msgid "Type"
+msgstr "Typ"
+
+#: ../spectlib/import_export.py:101
+#: ../spectlib/notifier.py:628
+msgid "Name"
+msgstr "Jméno"
+
+#: ../spectlib/import_export.py:110
+#: ../spectlib/notifier.py:637
+msgid "ID"
+msgstr "ID"
+
+#: ../spectlib/import_export.py:117
+#: ../spectlib/notifier.py:644
+msgid "TYPE"
+msgstr "TYP"
+
+#: ../spectlib/main.py:65
+msgid "no GTK, activating console mode"
+msgstr "žádné GTK, aktivace konzolového módu"
+
+#: ../spectlib/main.py:155
+msgid "Specto is already running!"
+msgstr "Specto již běží!"
+
+#: ../spectlib/main.py:237
+#: ../spectlib/watch.py:265
+msgid "No updates yet."
+msgstr "Zatím žádné aktualizace."
+
+#: ../spectlib/main.py:292
+msgid "watch \"%s\" started"
+msgstr "sledování \"%s\" začalo"
+
+#: ../spectlib/main.py:297
+msgid "watch \"%s\" stopped"
+msgstr "sledování \"%s\" skončilo"
+
+#: ../spectlib/main.py:482
+#: ../spectlib/main.py:491
+msgid "notifier: reappear"
+msgstr "upozorňovač: reappear"
+
+#: ../spectlib/main.py:487
+msgid "notifier: hide"
+msgstr "upozorňovač: skrýt"
+
+#: ../spectlib/main.py:500
+msgid "preferences: create"
+msgstr "předvolby: vytvořit"
+
+#: ../spectlib/main.py:503
+msgid "preferences: reappear"
+msgstr "předvolby: znovuobjevit"
+
+#: ../spectlib/main.py:510
+msgid "error log: create"
+msgstr "chybový záznam: vytvořit"
+
+#: ../spectlib/main.py:512
+msgid "error log: already visible"
+msgstr "chybový záznam: již viditelné"
+
+#: ../spectlib/main.py:515
+msgid "error log: recreate"
+msgstr "chybový záznam: znovuvytvořit"
+
+#: ../spectlib/main.py:521
+msgid "add watch: create"
+msgstr "přidat sledování: vytvořit"
+
+#: ../spectlib/main.py:523
+msgid "add watch: already visible"
+msgstr "přidat sledování: již viditelné"
+
+#: ../spectlib/main.py:526
+msgid "add watch: recreate"
+msgstr "přidat sledování: znovuvytvořit"
+
+#: ../spectlib/main.py:540
+msgid "edit watch: create"
+msgstr "upravit sledování: vytvořit"
+
+#: ../spectlib/main.py:542
+msgid "edit watch: already visible"
+msgstr "upravit sledování: již viditelné"
+
+#: ../spectlib/main.py:545
+msgid "edit watch: recreate"
+msgstr "upravit sledování: znovuvytvořit"
+
+#: ../spectlib/main.py:578
+msgid "Cannot quit yet"
+msgstr "Nelze ještě skončit"
+
+#: ../spectlib/main.py:582
+msgid "Murder!"
+msgstr "Zabít!"
+
+#: ../spectlib/main.py:593
+msgid ""
+"<b><big>Specto is currently busy and cannot quit yet.</big></b>\n"
+"\n"
+"This may be because it is checking for watch updates.\n"
+"However, you can try forcing it to quit by clicking the murder button."
+msgstr ""
+"<b><big>Specto je momentálně zaneprázdněno a nemůže ještě skončit.</big></b>\n"
+"\n"
+"To může být způsobeno tím, že kontroluje zda nedošlo k aktualizaci sledovaných objektů.\n"
+"Nicméně můžete zkusit přinutit jej skončit klepnutím na tlačítko zabít."
+
+#: ../spectlib/notifier.py:323
+msgid "The network connection seems to be down, watches will not update until then."
+msgstr "Síťové připojení se zdá být přerušeno, sledování nebudou po tuto dobu aktualizována."
+
+#: ../spectlib/notifier.py:382
+msgid "gmail <i>(%s unread)</i>"
+msgstr "gmail <i>(%s nepřečtených)</i>"
+
+#: ../spectlib/notifier.py:442
+msgid "watch \"%s\" opened"
+msgstr "sledování \"%s\" otevřeno"
+
+#: ../spectlib/notifier.py:481
+msgid "You can add all kinds of websites as watches. Static pages, RSS or Atom feeds, etc. Specto will automatically handle them."
+msgstr "Jako sledované objekty můžete přidat všechny druhy webstránek - statické stránky, RSS či Atom kanály atd., Specto je bude automaticky zpracovávat."
+
+#: ../spectlib/notifier.py:482
+msgid "Website watches can use an error margin that allows you to set a minimum difference percentage. This allows you to adapt to websites that change constantly or have lots of advertising."
+msgstr "Sledování webových stránek mohou používat tolerovanou míru změny, která vám umožňuje nastavit minimální procento rozdílu. To vám umožňuje přizpůsobení webstránkám, které se konstantně mění či mají mnoho reklamy."
+
+#: ../spectlib/notifier.py:483
+msgid "Single-click an existing watch to display information, and double-click it to open the content."
+msgstr "Klepněte na existující sledovaný objekt pro zobrazení informací a poklepejte na něj pro otevření obsahu."
+
+#: ../spectlib/notifier.py:484
+msgid "Please set a reasonable refresh interval in order to save bandwidth and prevent you from being blocked from content providers."
+msgstr "Prosím nastavte rozumný obnovovací interval pro šetření šířkou pásma a zabránění vašeho zablokování poskytovateli obsahu."
+
+#: ../spectlib/notifier.py:544
+msgid "notifier: size set"
+msgstr "upozorňovač: velikost nastavena"
+
+#: ../spectlib/notifier.py:546
+msgid "notifier: size not set"
+msgstr "upozorňovač: velikost nenastavena"
+
+#: ../spectlib/notifier.py:550
+msgid "notifier: position set"
+msgstr "upozorňovač: pozice nastavena"
+
+#: ../spectlib/notifier.py:552
+msgid "notifier: position not set"
+msgstr "upozorňovač: pozice nenastavena"
+
+#: ../spectlib/notifier.py:657
+msgid "Tip of the Day:"
+msgstr "Tip dne:"
+
+#: ../spectlib/notifier.py:675
+#: ../spectlib/notifier.py:730
+#: ../spectlib/notifier.py:785
+#: ../spectlib/notifier.py:828
+#: ../spectlib/notifier.py:873
+msgid "<b>Name:</b>"
+msgstr "<b>Jméno:</b>"
+
+#: ../spectlib/notifier.py:687
+#: ../spectlib/notifier.py:742
+#: ../spectlib/notifier.py:797
+#: ../spectlib/notifier.py:840
+#: ../spectlib/notifier.py:885
+msgid "<b>Last Updated:</b>"
+msgstr "<b>Poslední aktualizace:</b>"
+
+#: ../spectlib/notifier.py:699
+msgid "<b>Location:</b>"
+msgstr "<b>Umístění:</b>"
+
+#: ../spectlib/notifier.py:711
+msgid "<b>Error Margin:</b>"
+msgstr "<b>Tolerovaná míra změny:</b>"
+
+#: ../spectlib/notifier.py:754
+msgid "<b>Host:</b>"
+msgstr "<b>Počítač:</b>"
+
+#: ../spectlib/notifier.py:766
+msgid "<b>Username:</b>"
+msgstr "<b>Uživatelské jméno:</b>"
+
+#: ../spectlib/notifier.py:809
+msgid "<b>File/folder:</b>"
+msgstr "<b>Soubor/adresář:</b>"
+
+#: ../spectlib/notifier.py:852
+msgid "<b>Process:</b>"
+msgstr "<b>Proces:</b>"
+
+#: ../spectlib/notifier.py:897
+msgid "<b>Port:</b>"
+msgstr "<b>Port:</b>"
+
+#: ../spectlib/preferences.py:98
+msgid "Preferences saved."
+msgstr "Předvolby uloženy."
+
+#: ../spectlib/trayicon.py:75
+msgid "No updated watches."
+msgstr "Žádná aktualizovaná sledování."
+
+#: ../spectlib/trayicon.py:77
+msgid "Updated watches:\n"
+msgstr "Aktualizovaná sledování:\n"
+
+#: ../spectlib/trayicon.py:79
+msgid "website"
+msgstr "webstránka"
+
+#: ../spectlib/trayicon.py:79
+msgid "websites"
+msgstr "webstránky"
+
+#: ../spectlib/trayicon.py:85
+msgid "mail account"
+msgstr "účet elektronické pošty"
+
+#: ../spectlib/trayicon.py:85
+msgid "mail accounts"
+msgstr "účty elektronické pošty"
+
+#: ../spectlib/trayicon.py:93
+msgid "file/folder"
+msgstr "soubor/složka"
+
+#: ../spectlib/trayicon.py:93
+msgid "files/folders"
+msgstr "soubory/složky"
+
+#: ../spectlib/trayicon.py:100
+msgid "process"
+msgstr "proces"
+
+#: ../spectlib/trayicon.py:100
+msgid "processes"
+msgstr "procesy"
+
+#: ../spectlib/trayicon.py:108
+msgid "port"
+msgstr "port"
+
+#: ../spectlib/trayicon.py:108
+msgid "ports"
+msgstr "porty"
+
+#: ../spectlib/trayicon.py:143
+msgid "Hide window"
+msgstr "Skrýt okno"
+
+#: ../spectlib/trayicon.py:145
+msgid "Show window"
+msgstr "Zobrazit okno"
+
+#: ../spectlib/watch.py:63
+msgid "The watch, <b>%s</b>, has a problem. You may need to check the error log."
+msgstr "U sledování <b>%s</b> došlo k problému. Možná potřebujete zkontrolovat chybový záznam."
+
+#: ../spectlib/watch.py:70
+msgid "Watch \"%s\" is already marked as updated in the notifier"
+msgstr "Sledování \"%s\" je již označeno jako aktualizované v upozorňovači"
+
+#: ../spectlib/watch.py:85
+msgid "Watch \"%s\" updated!"
+msgstr "Sledování \"%s\" aktualizováno!"
+
+#: ../spectlib/watch.py:98
+msgid "The website, <b>%s</b>, has been updated."
+msgstr "Webstránka <b>%s</b> byla aktualizována."
+
+#: ../spectlib/watch.py:104
+#: ../spectlib/watch.py:113
+msgid "Your email account, <b>%s</b>, has <b>%d</b> new mail."
+msgstr ""
+"Váš účet elektronické pošty\n"
+"<b>%s</b>\n"
+"má <b>%d</b> nových zpráv."
+
+#: ../spectlib/watch.py:106
+#: ../spectlib/watch.py:115
+msgid "Your email account, <b>%s</b>, has <b>%d</b> new unread mails, totalling %s"
+msgstr ""
+"Váš účet elektronické pošty\n"
+"<b>%s</b>\n"
+"má <b>%d</b> nových nepřečtených zpráv\n"
+"(celkově %s)."
+
+#: ../spectlib/watch.py:109
+msgid "Your email account, <b>%s</b>, has new mail."
+msgstr ""
+"Váš účet elektronické pošty\n"
+"<b>%s</b> má novou zprávu."
+
+#: ../spectlib/watch.py:122
+msgid "The file/folder, <b>%s</b>, has been updated."
+msgstr "Soubor/adresář <b>%s</b> byl aktualizován."
+
+#: ../spectlib/watch.py:125
+msgid "The process, <b>%s</b>, has stopped."
+msgstr "Proces <b>%s</b> se zastavil."
+
+#: ../spectlib/watch.py:127
+msgid "The process, <b>%s</b>, has started."
+msgstr "Proces <b>%s</b> byl spuštěn."
+
+#: ../spectlib/watch.py:132
+msgid "The connection, <b>%s</b>, was closed."
+msgstr "Spojení <b>%s</b> bylo uzavřeno."
+
+#: ../spectlib/watch.py:134
+msgid "The connection, <b>%s</b>, was established."
+msgstr "Spojení <b>%s</b> bylo navázáno."
+
+#: ../spectlib/watch.py:138
+msgid "Not implemented yet"
+msgstr "Zatím neimplementováno"
+
+#: ../spectlib/watch_file.py:43
+msgid "Unknown File Watch"
+msgstr "Unknown File Watch"
+
+#: ../spectlib/watch_file.py:77
+#: ../spectlib/watch_mail_gmail.py:87
+#: ../spectlib/watch_mail_imap.py:83
+#: ../spectlib/watch_mail_pop3.py:94
+#: ../spectlib/watch_port.py:70
+#: ../spectlib/watch_process.py:71
+#: ../spectlib/watch_web_static.py:101
+msgid "Updating watch: \"%s\""
+msgstr "Aktualizace sledování: \"%s\""
+
+#: ../spectlib/watch_file.py:100
+#: ../spectlib/watch_port.py:83
+#: ../spectlib/watch_process.py:85
+msgid "Watch: \"%s\" has an error"
+msgstr "U sledování: \"%s\" došlo k chybě"
+
+#: ../spectlib/watch_file.py:115
+msgid "update: %s was modified"
+msgstr "aktualizace: %s byl modifikován"
+
+#: ../spectlib/watch_file.py:120
+msgid "update: %s was created"
+msgstr "aktualizace: %s byl vytvořen"
+
+#: ../spectlib/watch_file.py:134
+msgid "Skipping %s"
+msgstr "Přeskočení %s"
+
+#: ../spectlib/watch_file.py:143
+msgid "update: %s removed"
+msgstr "aktualizace: %s odstraněn"
+
+#: ../spectlib/watch_mail_gmail.py:44
+#: ../spectlib/watch_mail_imap.py:42
+#: ../spectlib/watch_mail_pop3.py:46
+msgid "Unknown Mail Watch"
+msgstr "Unknown Mail Watch"
+
+#: ../spectlib/watch_mail_gmail.py:76
+#: ../spectlib/watch_mail_imap.py:73
+#: ../spectlib/watch_mail_pop3.py:83
+#: ../spectlib/watch_web_static.py:89
+msgid "No network connection detected"
+msgstr "Detekováno žádné síťové připojení"
+
+#: ../spectlib/watch_mail_gmail.py:108
+msgid "Watch: \"%s\" has error: wrong username/password"
+msgstr "U sledování: \"%s\" došlo k chybě: špatné uživatelské jméno/heslo"
+
+#: ../spectlib/watch_mail_imap.py:92
+#: ../spectlib/watch_mail_imap.py:116
+msgid "Watch: \"%s\" has error: %s"
+msgstr "U sledování: \"%s\" došlo k chybě: %s"
+
+#: ../spectlib/watch_mail_imap.py:105
+msgid "Mailbox does not exist"
+msgstr "Schránka elektronické pošty neexistuje."
+
+#: ../spectlib/watch_mail_pop3.py:103
+#: ../spectlib/watch_mail_pop3.py:132
+#: ../spectlib/watch_web_static.py:121
+msgid "Watch: \"%s\" has error: "
+msgstr "U sledování: \"%s\" došlo k chybě: "
+
+#: ../spectlib/watch_port.py:38
+#: ../spectlib/watch_process.py:39
+msgid "Unknown Process Watch"
+msgstr "Unknown Process Watch"
+
+#: ../spectlib/watch_web_static.py:62
+msgid "Watch: \"%s\" has error: empty url"
+msgstr "U sledování: \"%s\" došlo k chybě: prázdné url"
+
+#: ../spectlib/watch_web_static.py:180
+msgid "Difference percentage:%s (Watch: \"%s\")"
+msgstr "Procento rozdílu:%s (Sledování: \"%s\")"
+
