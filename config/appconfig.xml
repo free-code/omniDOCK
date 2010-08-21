@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<uberdock-config>
+        <some-option>Doe a deer</some-option>
+	<window>
+            <decorated>True</decorated>
+	    <size>240x860</size>
+        </window>
+</uberdock-config>
