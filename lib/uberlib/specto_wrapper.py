@@ -16,8 +16,12 @@
 # Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 # Boston, MA 02111-1307, USA.
 
-# Name: uberdock.py
-# Purpose: Controller for all aspects of uberdock
+# Name: specto_wrapper.py
+# Purpose: Instantiate and use classes from specto
 
-import sys
-sys.path += ['lib/']
+class SpectoWrapper:
+    """Reuse code from the specto project"""
+
+    """
+    def __init__(self):
+    """
