@@ -1,4 +1,6 @@
-# This file is part of the uberdock project
+#!/usr/bin/env python
+
+# This file is part of the omniDOCK project
 # See the AUTHORS file for copyright ownership information
 #
 # This program is free software; you can redistribute it and/or
@@ -16,8 +18,9 @@
 # Free Software Foundation, Inc., 59 Temple Place - Suite 330,
 # Boston, MA 02111-1307, USA.
 
-# Name: uberdock.py
-# Purpose: Controller for all aspects of uberdock
+# Name: omnidock.py
+# Purpose: Controller for all aspects of omniDOCK
 
-import sys
-sys.path += ['lib/']
+import sys; sys.path += ['lib/']
+
+

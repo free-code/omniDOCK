@@ -26,6 +26,8 @@
 
 global GTK
 global DEBUG #the DEBUG constant which controls how much info is output
+GTK = False
+DEBUG = False
 
 import os
 import sys
@@ -40,6 +42,7 @@ from spectlib.logger import Logger
 from spectlib.tools.specto_gconf import Specto_gconf
 from spectlib.i18n import _
 from spectlib.tools import networkmanager as conmgr
+from spectlib.notifier import Notifier
 
 #create a gconf object
 specto_gconf = Specto_gconf("/apps/specto")
@@ -50,18 +53,6 @@ elif specto_gconf.get_entry("debug_mode")==False:
     DEBUG = False
 else:
     DEBUG = False
-
-try:
-    import pygtk
-    pygtk.require("2.0")
-    import gtk
-    import gtk.glade
-except:
-    print _("no GTK, activating console mode")
-    GTK = False
-else:
-    GTK = True
-    from spectlib.notifier import Notifier
 
 
 class Specto:
