@@ -1,0 +1,22 @@
+<interface>
+      <object class="GtkButton" id="ok_button1">
+	<property name="label">gtk-ok</property>
+	<property name="use-stock">TRUE</property>
+	<signal name="clicked" handler="ok_button_clicked"/>
+      </object>
+      <object class="GtkButton" id="ok_button2">
+	<property name="label">gtk-ok</property>
+	<property name="use-stock">TRUE</property>
+	<signal name="clicked" handler="ok_button_clicked"/>
+      </object>
+      <object class="GtkButton" id="ok_button3">
+	<property name="label">gtk-ok</property>
+	<property name="use-stock">TRUE</property>
+	<signal name="clicked" handler="ok_button_clicked"/>
+      </object>
+      <object class="GtkButton" id="ok_button4">
+	<property name="label">gtk-ok</property>
+	<property name="use-stock">TRUE</property>
+	<signal name="clicked" handler="ok_button_clicked"/>
+      </object>
+</interface>
