@@ -22,5 +22,6 @@
 # Purpose: Controller for all aspects of omniDOCK
 
 import sys; sys.path += ['lib/']
+from omnilib.specto_wrapper import SpectoWrapper
 
-
+specto = SpectoWrapper()
