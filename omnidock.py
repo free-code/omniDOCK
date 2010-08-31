@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 # This file is part of the omniDOCK project
 # See the AUTHORS file for copyright ownership information
@@ -23,5 +24,15 @@
 
 import sys; sys.path += ['lib/']
 from omnilib.specto_wrapper import SpectoWrapper
+from xml.etree.ElementTree import ElementTree
+
+class omniDOCK():
+    def __init__(self):
+	appConfig = self.get_config()
+	
+    def get_config():
+	etree = ElementTree()
+	config = etree.parse("config/omniDOCK.xml")
+	return config
 
 specto = SpectoWrapper()
