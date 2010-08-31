@@ -16,17 +16,16 @@ class MainWindow(gtk.Window):
     #Gizmos are added to the table, not the window.  
     self.table = gtk.Table(12,4,True)
     
+    #----------------------------------
     etree = ElementTree()
     etree.parse("launchers.xml")
+    #XML insists on nesting everything a dozen times
     launchers = etree.find("launchers")
     for i, launcherConfig in enumerate(launchers.getchildren()):
       launcher = gtk.Button()
       launcher.set_label(launcherConfig.find("name").text)
       self.table.attach(launcher, 0, 1, i, i+1)
-      #print dir(launcher)
-    #launcherList = list(thingy.iter("launcher"))
-    #print launcherlist
-
+    #-----------------------------------
       
     #add the table to the window
     self.add(self.table)
