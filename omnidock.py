@@ -30,9 +30,12 @@ class omniDOCK():
     def __init__(self):
 	appConfig = self.get_config()
 	
-    def get_config():
+    def get_config(self):
 	etree = ElementTree()
 	config = etree.parse("config/omniDOCK.xml")
 	return config
 
-specto = SpectoWrapper()
+
+if __name__ == "__main__":
+    specto = SpectoWrapper()
+    omniDOCK()
