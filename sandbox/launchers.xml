@@ -1,0 +1,24 @@
+<launcherConfig>
+  <launchers>
+    <launcher>
+      <name>Firefox</name>
+      <exec>firefox</exec>
+      <icon>/usr/share/icons/hicolor/48x48/apps/empathy.png</icon>
+    </launcher>
+    <launcher>
+      <name>Deluge</name>
+      <exec>firefox</exec>
+      <icon>/usr/share/icons/hicolor/48x48/apps/empathy.png</icon>
+    </launcher>
+    <launcher>
+      <name>VLC</name>
+      <exec>firefox</exec>
+      <icon>/usr/share/icons/hicolor/48x48/apps/empathy.png</icon>
+    </launcher>
+    <launcher>
+      <name>Chrome</name>
+      <exec>firefox</exec>
+      <icon>/usr/share/icons/hicolor/48x48/apps/empathy.png</icon>
+    </launcher>
+  </launchers>
+</launcherConfig>
