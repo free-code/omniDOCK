@@ -1,0 +1,1 @@
+omniDOCK is a two-dimensional dock designed to hold a variety of widgets.
