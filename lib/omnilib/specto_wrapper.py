@@ -20,21 +20,60 @@
 # Purpose: Instantiate and use classes from specto
 
 from subprocess import Popen
+from spectlib import util
 
 class SpectoWrapper:
     """
     Reuses code from the specto project
     """
     
+
     def __init__(self):
+        """
+        Start specto in console mode, and set any useful instance variables
+        """
         try:
             self.running_process = Popen(["specto", "--console"])
         except:
             self.running_process = Popen(["./specto.py", "--console"])
+        finally:
+            self.pid = self.running_process.pid
 
-        self.pid = self.running_process.pid
+        self.config_dir = util.get_path("specto")
 
 
     def __del__(self):
+        """
+        Clean up before we go
+        """
         self.running_process.kill()
+
+
+    def watches(self):
+        """
+        Return a dictionary of watches
+        """
+        watches_list = self.config_dir + "/watches.list"
+        watch_dictionary = {}
+        input = open(watches_list, 'r')
         
+        for line in input:
+            line = line.strip('\n')
+            
+            if '[' and ']' in line:
+                line = line[1:-1]
+                watch_dictionary[line] = {}
+                key = line
+                
+            elif '=' in line:
+                line = line.split('=')
+                sub_key = line[0].strip()
+                value = line[1].strip()
+                watch_dictionary[key][sub_key] = value
+
+            elif line == '':
+                pass
+
+        return watch_dictionary
+
+
