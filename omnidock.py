@@ -27,15 +27,19 @@ from omnilib.specto_wrapper import SpectoWrapper
 from xml.etree.ElementTree import ElementTree
 
 class omniDOCK():
+    """
+    Main class that coordinates and controls all logic for omniDock
+    """
+
     def __init__(self):
-	appConfig = self.get_config()
+    	self.appConfig = self.get_config()
+        self.specto = SpectoWrapper()
 	
     def get_config(self):
-	etree = ElementTree()
-	config = etree.parse("config/omniDOCK.xml")
-	return config
+    	etree = ElementTree()
+    	config = etree.parse("config/omniDOCK.xml")
+    	return config
 
 
 if __name__ == "__main__":
-    specto = SpectoWrapper()
-    omniDOCK()
+    omnidock = omniDOCK()
