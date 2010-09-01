@@ -19,7 +19,7 @@
 # Name: specto_wrapper.py
 # Purpose: Instantiate and use classes from specto
 
-import os
+from subprocess import Popen
 
 class SpectoWrapper:
     """
@@ -27,6 +27,14 @@ class SpectoWrapper:
     """
     
     def __init__(self):
-        self.pid = os.spawnl(os.P_NOWAIT, './specto.py')
+        try:
+            self.running_process = Popen(["specto", "--console"])
+        except:
+            self.running_process = Popen(["./specto.py", "--console"])
 
+        self.pid = self.running_process.pid
+
+
+    def __del__(self):
+        self.running_process.kill()
         
