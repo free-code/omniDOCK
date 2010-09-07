@@ -31,42 +31,44 @@ class System:
 
     def cpu_usage(self):
         """
-        Return a dictionary of aggregated cpu usage
-        """
-        temp = {}
-        usage = {}
-        input = commands.getoutput("head -1 /proc/stat")
-        cpu_line = input.split()[1:-1] #Get rid of "cpu"
-        
-        #Convert all the values from string to numeric
-        index = 0
-        for hertz in cpu_line:
-            cpu_line[index] = int(hertz)
-            index += 1 
+        Return an integer that represents percentage of cpu used
 
-        #Parse out the values we need        
-        temp['user'] = cpu_line[0]
-        temp['nice'] = cpu_line[1]
-        temp['system'] = cpu_line[2]
-        temp['idle'] = cpu_line[3]
-        temp['io_wait'] = cpu_line[4]
-        temp['irq'] = cpu_line[5]
-        temp['soft_irq'] = cpu_line[6]
-        temp['total'] = 0.0
-        for hertz in cpu_line:
-            temp['total'] += hertz
-        
-        #Convert to percentages
-        for key in temp.keys():
-            usage[key] = (temp[key] / temp['total']) * 100
-            usage[key] = int(usage[key])
-        
-        return usage
+        >>> test = System()
+
+        >>> type(test.cpu_usage())
+        <type 'int'>
+
+        >>> test.memory_usage() > -1
+        True
+
+        >>> test.memory_usage() < 101
+        True
+        """
+        input = commands.getoutput("ps -Ao %cpu")
+        input = input.split("\n")
+        del input[0]
+        usage_percentage = 0.0 
+
+        for process in input:
+            usage_percentage += float(process)
+
+        return int(usage_percentage)
 
 
     def memory_usage(self):
         """
-        Return a dictionary of memory usage as percentages
+        Return an integer that represents percentage of RAM used
+
+        >>> test = System()
+
+        >>> type(test.memory_usage())
+        <type 'int'>
+
+        >>> test.memory_usage() > -1
+        True
+
+        >>> test.memory_usage() < 101
+        True
         """
         usage = 0
         temp = {}
@@ -89,6 +91,14 @@ class System:
     def filesystem_usage(self):
         """
         Return a dictionary of partition names and space usage
+
+        >>> test = System()
+
+        >>> type(test.filesystem_usage())
+        <type 'dict'>
+
+        >>> test.filesystem_usage().keys().count("/")
+        1
         """
         usage = {}
         input = commands.getoutput("df -h")
@@ -105,4 +115,15 @@ class System:
                                     'size':line[-5]}
 
         return usage
+
+
+
+def _test():
+    import doctest
+    doctest.testmod()
+
+
+if __name__ == "__main__":
+    _test()
+
 
