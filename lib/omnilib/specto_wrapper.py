@@ -31,6 +31,20 @@ class SpectoWrapper:
     def __init__(self):
         """
         Start specto in console mode, and set any useful instance variables
+
+        >>> test = SpectoWrapper()
+
+        >>> type(test.running_process)
+        <class 'subprocess.Popen'>
+
+        >>> type(test.pid)
+        <type 'int'>
+
+        >>> type(test.config_dir)
+        <type 'str'>
+
+        >>> "specto" in test.config_dir
+        True
         """
         try:
             self.running_process = Popen(["specto", "--console"])
@@ -52,6 +66,11 @@ class SpectoWrapper:
     def watches(self):
         """
         Return a dictionary of watches
+
+        >>> test = SpectoWrapper()
+
+        >>> type(test.watches())
+        <type 'dict'>
         """
         watches_list = self.config_dir + "/watches.list"
         watch_dictionary = {}
@@ -77,3 +96,10 @@ class SpectoWrapper:
         return watch_dictionary
 
 
+def _test():
+    import doctest
+    doctest.testmod()
+
+
+if __name__ == "__main__":
+    _test()
