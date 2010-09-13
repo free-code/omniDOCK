@@ -49,7 +49,7 @@ class SpectoWrapper:
         try:
             self.running_process = Popen(["specto", "--console"])
         except:
-            self.running_process = Popen(["./specto.py", "--console"])
+            self.running_process = Popen(["./lib/specto", "--console"])
         finally:
             self.pid = self.running_process.pid
 
