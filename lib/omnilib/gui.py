@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import gtk
+import docktable
 
 class OmniDOCKGUI(gtk.Window):
     def __init__(self, configTree):
@@ -7,10 +8,19 @@ class OmniDOCKGUI(gtk.Window):
         height = int(configTree.findtext("window/height"))
         width = int(configTree.findtext("window/width"))
 	self.set_size_request(width, height)
+	self.add_docktable()
+	self.connect('destroy', gtk.main_quit)
+	
+    def add_docktable(self):
+	print "adding docktable"
+	table = docktable.DockTable()
+	self.add(table)
 	
     def show_window(self):
-	self.show()
+	self.show_all()
 	gtk.main()
+	
+    
 
 
 	
