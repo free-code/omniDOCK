@@ -33,6 +33,7 @@ class omniDOCK():
     """
 
     def __init__(self):
+	print "For now, click on the window and do alt+f4 to exit"
     	self.appConfig = self.get_config()
         self.specto = SpectoWrapper()
         dockGui = gui.OmniDOCKGUI(self.appConfig)

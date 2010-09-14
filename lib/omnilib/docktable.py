@@ -19,7 +19,6 @@ class DockTable(gtk.Table):
 	    image.set_from_file(launcher.findtext("icon"))
 	    button.set_image(image)
 	    command = launcher.findtext("exec")
-	    print "command = ", command
 	    button.connect("clicked", self.launch, command)
 	    self.attach(button,
 	                int(launcher.findtext("left_attach")),

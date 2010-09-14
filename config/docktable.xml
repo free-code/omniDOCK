@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <docktable-config>
-        <rows>12</rows>
+        <rows>16</rows>
         <columns>4</columns>
 	<launcher>
             <name>True</name>
