@@ -24,6 +24,7 @@
 
 import sys; sys.path += ['lib/']
 from omnilib.specto_wrapper import SpectoWrapper
+from omnilib import gui
 from xml.etree.ElementTree import ElementTree
 
 class omniDOCK():
@@ -34,6 +35,8 @@ class omniDOCK():
     def __init__(self):
     	self.appConfig = self.get_config()
         self.specto = SpectoWrapper()
+        dockGui = gui.OmniDOCKGUI(self.appConfig)
+        dockGui.show_window()
 	
     def get_config(self):
     	etree = ElementTree()
