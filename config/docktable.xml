@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<docktable-config>
+        <rows>12</rows>
+        <columns>4</columns>
+	<launcher>
+            <name>True</name>
+	    <icon>/home/josh/icon.png</icon>
+	    <exec>firefox</exec>
+            <left_attach>0</left_attach>
+            <right_attach>1</right_attach>
+            <top_attach>0</top_attach>
+            <bottom_attach>1</bottom_attach>
+        </launcher>
+        <launcher>
+            <name>True</name>
+	    <icon>/home/josh/icon.png</icon>
+	    <exec>firefox</exec>
+            <left_attach>1</left_attach>
+            <right_attach>2</right_attach>
+            <top_attach>0</top_attach>
+            <bottom_attach>1</bottom_attach>
+        </launcher>
+        <launcher>
+            <name>True</name>
+	    <icon>/home/josh/icon.png</icon>
+	    <exec>firefox</exec>
+            <left_attach>2</left_attach>
+            <right_attach>3</right_attach>
+            <top_attach>0</top_attach>
+            <bottom_attach>1</bottom_attach>
+        </launcher>
+</docktable-config>
