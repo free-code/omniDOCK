@@ -7,7 +7,7 @@
 	    <width>240</width>
 	    <height>900</height>
 	    <opacity>.5</opacity>
-	    <xpos>1300</xpos>
-	    <ypos>0</ypos>
+            <align>left</align>
+            <bg>black</bg>
         </window>
 </omnidock-config>
