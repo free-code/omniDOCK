@@ -22,10 +22,10 @@
 # Name: omnidock.py
 # Purpose: Controller for all aspects of omniDOCK
 
-import sys; sys.path += ['lib/']
+import sys; sys.path += ['lib/', 'config/']
 from omnilib.specto_wrapper import SpectoWrapper
 from omnilib import gui
-from xml.etree.ElementTree import ElementTree
+import dockconfig
 
 class omniDOCK():
     """
@@ -34,17 +34,17 @@ class omniDOCK():
 
     def __init__(self):
 	print "For now, click on the window and do alt+f4 to exit"
-    	self.appConfig = self.get_config()
+    	self.appConfig = dockconfig.DockConfig()
+    	self.appConfig.load()
+    	self.appConfig.save()
         self.specto = SpectoWrapper()
         dockGui = gui.OmniDOCKGUI()
         dockGui.apply_config(self.appConfig)
         dockGui.show_window()
 	
-    def get_config(self):
-    	etree = ElementTree()
-    	config = etree.parse("config/omniDOCK.xml")
-    	return config
+
 
 
 if __name__ == "__main__":
     omnidock = omniDOCK()
+    

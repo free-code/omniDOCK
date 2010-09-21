@@ -5,7 +5,7 @@
         <columns>4</columns>
 	<launcher>
             <name>True</name>
-	    <icon>/home/josh/icon.png</icon>
+	    <icon>/usr/share/icons/gnome/48x48/apps/applets-screenshooter.png</icon>
 	    <exec>firefox</exec>
             <left_attach>0</left_attach>
             <right_attach>1</right_attach>
@@ -14,7 +14,7 @@
         </launcher>
         <launcher>
             <name>True</name>
-	    <icon>/home/josh/icon.png</icon>
+	    <icon>/usr/share/icons/gnome/48x48/apps/visor.png</icon>
 	    <exec>firefox</exec>
             <left_attach>1</left_attach>
             <right_attach>2</right_attach>
@@ -23,7 +23,7 @@
         </launcher>
         <launcher>
             <name>True</name>
-	    <icon>/home/josh/icon.png</icon>
+	    <icon>/usr/share/icons/gnome/48x48/apps/palm-pilot.png</icon>
 	    <exec>firefox</exec>
             <left_attach>2</left_attach>
             <right_attach>3</right_attach>
