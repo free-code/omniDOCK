@@ -18,31 +18,28 @@ class DockConfig(ElementTree):
 	
     def _verify(self):
 	window = self.find("window")
-	
+	dec = window.findtext("decorated")
 	#Make sure decorated property is set to true/false
-        if (window.findtext("decorated") == "True"):
-	    pass
-	elif (window.findtext("decorated") == "False"):
-	    pass
-	else:
-	    message = "'decorated' property must be True or False."
-	    self._on_err(TypeError, message)
+        if dec != "True" and dec != "False":
+            message = "'decorated' property must be 'True' or 'False'. Got '%s'" % dec
+            self._on_err(TypeError, message)
         
         #Verify that height and width are integerish
-        try:
-	    int(self.findtext("height"))
-	except:
-	    message = "Somehow, 'height' property is not an integer."
-	    self.on_err(TypeError, message)
-	try:
-	    int(self.findtext("width"))
-	except:
-	    message = "Somehow, 'width' property is not an integer."
-	    self.on_err(TypeError, message)
-        
+        for attr in ("height", "width"):
+	    try:
+		int(window.findtext(attr))
+	    except ValueError:
+		message = "invalid data type for '%s' property in config" % attr
+		self._on_err(ValueError, message)
+	    except TypeError:
+		#It seems odd that failure to find a node causes a typeerror,
+		#but that's what happens in testing.  
+		message = "'%s' property not found in config" % attr
+		self._on_err(TypeError, message)
+		
         
     def _on_err(self, errType, message):
 	raise errType, message
-        print "Check %s" % self.configFile
+        
 	
 		
