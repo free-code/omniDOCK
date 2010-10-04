@@ -17,8 +17,22 @@ class DockConfig(ElementTree):
 	
 	
     def _verify(self):
-	window = self.find("window")
-	dec = window.findtext("decorated")
+	#Made it this way because the assignment succeeds even if there's
+	#no 'window' node in the config - it just assigns as None.  
+	try:
+	    window = self.find("window")
+	    assert window != None
+	except:
+	    message = "'window' node not found in config"
+	    self._on_err(AttributeError, message)
+	    
+	#Same here
+	try:
+	    dec = window.findtext("decorated")
+	    assert dec != None
+	except:
+	    message = "'decorated' property not found in config"
+	    self._on_err(AttributeError, message)
 	#Make sure decorated property is set to true/false
         if dec != "True" and dec != "False":
             message = "'decorated' property must be 'True' or 'False'. Got '%s'" % dec
@@ -28,14 +42,14 @@ class DockConfig(ElementTree):
         for attr in ("height", "width"):
 	    try:
 		int(window.findtext(attr))
-	    except ValueError:
+	    except ValueError as err:
 		message = "invalid data type for '%s' property in config" % attr
-		self._on_err(ValueError, message)
-	    except TypeError:
+		self._on_err(err, message)
+	    except TypeError as err:
 		#It seems odd that failure to find a node causes a typeerror,
 		#but that's what happens in testing.  
 		message = "'%s' property not found in config" % attr
-		self._on_err(TypeError, message)
+		self._on_err(err, message)
 		
         
     def _on_err(self, errType, message):

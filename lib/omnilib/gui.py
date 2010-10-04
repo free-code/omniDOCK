@@ -7,6 +7,7 @@ class OmniDOCKGUI(gtk.Window):
 	super(OmniDOCKGUI, self).__init__()
 	self.configTree = None
 	self.connect('destroy', gtk.main_quit)
+	self.set_type_hint(gtk.gdk.WINDOW_TYPE_HINT_DOCK)
 	
     def add_docktable(self):
 	table = docktable.DockTable()
