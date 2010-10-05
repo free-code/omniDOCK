@@ -4,7 +4,8 @@ from xml.etree.ElementTree import ElementTree
 from subprocess import Popen
 
 class DockTable(gtk.Table):
-    def __init__(self):
+    def __init__(self, color):
+	self.color = color
 	self.configTree = self.get_config()
 	rows = int(self.configTree.findtext("rows"))
 	columns = int(self.configTree.findtext("columns"))
@@ -12,21 +13,23 @@ class DockTable(gtk.Table):
         self.add_launchers()
 	
 	
-    def add_launchers(self):
+    def add_launchers(self):    
+        #Pull launchers from XML config
 	for launcher in self.configTree.findall("launcher"):
 	    button = gtk.Button()
 	    button.set_focus_on_click(False)
 	    #setting button color is surprisingly complex
-	    cmap = button.get_colormap() 
-            color = cmap.alloc_color("black")
+            cmap = button.get_colormap() 
+            color = cmap.alloc_color(self.color)
             style = button.get_style().copy()
             style.bg[gtk.STATE_NORMAL] = color
             button.set_style(style)
-            
+            #Set icon
 	    image  = gtk.Image()
 	    image.set_from_file(launcher.findtext("icon"))
 	    button.set_image(image)
 	    command = launcher.findtext("exec")
+	    #Connect click action and attach to table
 	    button.connect("clicked", self.launch, command)
 	    self.attach(button,
 	                int(launcher.findtext("left_attach")),
@@ -36,7 +39,7 @@ class DockTable(gtk.Table):
 	                
 	
     def get_free_cells(self):
-	#This is the function from the awesome dude on StackOverflow.  
+	#This is the function from the awesome guy on StackOverflow.  
 	#Thanks Geoff!
 	table = self
         free_cells = set([(x,y) for x in range(table.props.n_columns) for y in range(table.props.n_rows)])

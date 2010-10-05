@@ -12,7 +12,7 @@ class OmniDOCKGUI(gtk.Window):
 	#self.set_keep_above(True)
 	
     def add_docktable(self):
-	table = docktable.DockTable()
+	table = docktable.DockTable(self.configTree.findtext("window/bg"))
 	self.add(table)
 
 
