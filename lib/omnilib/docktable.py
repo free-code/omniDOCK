@@ -15,6 +15,14 @@ class DockTable(gtk.Table):
     def add_launchers(self):
 	for launcher in self.configTree.findall("launcher"):
 	    button = gtk.Button()
+	    button.set_focus_on_click(False)
+	    #setting button color is surprisingly complex
+	    cmap = button.get_colormap() 
+            color = cmap.alloc_color("black")
+            style = button.get_style().copy()
+            style.bg[gtk.STATE_NORMAL] = color
+            button.set_style(style)
+            
 	    image  = gtk.Image()
 	    image.set_from_file(launcher.findtext("icon"))
 	    button.set_image(image)
