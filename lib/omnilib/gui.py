@@ -12,12 +12,12 @@ class OmniDOCKGUI(gtk.Window):
 
 	
     def add_docktable(self):
-	table = docktable.DockTable(self.configTree.findtext("window/bg"))
-	self.add(table)
+	self.table = docktable.DockTable(self.configTree.findtext("window/bg"))
+	self.add(self.table)
 
 
-    def show_window(self):
-	gtk.main()
+#    def show_window(self):
+#	gtk.main()
 
 
     def apply_strut(self, align):

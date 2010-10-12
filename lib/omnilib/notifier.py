@@ -18,7 +18,7 @@ class Notifier(gtk.Image):
     
     def _set_icon(self, service):
 	if service == "facebook":
-	    filename = "/home/josh/omniDOCK/bluefish.png"
+	    filename = "bluefish.png"
 	self.set_from_file(filename)
 	
     

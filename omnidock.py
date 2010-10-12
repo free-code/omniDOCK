@@ -26,6 +26,7 @@ import sys; sys.path += ['lib/', 'config/']
 from omnilib.specto_wrapper import SpectoWrapper
 from omnilib import gui
 import dockconfig
+import gtk
 
 class omniDOCK():
     """
@@ -33,16 +34,30 @@ class omniDOCK():
     """
 
     def __init__(self):
-	print "For now, click on the window and do alt+f4 to exit"
-    	self.appConfig = dockconfig.DockConfig()
+	self.appConfig = dockconfig.DockConfig()
     	self.appConfig.load()
     	self.appConfig.save()
         self.specto = SpectoWrapper()
         dockGui = gui.OmniDOCKGUI()
         dockGui.apply_config(self.appConfig)
-        dockGui.show_window()
+        #dockGui.show_window()
+        self.table = dockGui.table
+        dockGui.show_all()
+        #faking notifications from specto
+        self.specto_callback("facebook", 1)
+        self.specto_callback("facebook", 2)
+        self.specto_callback("facebook", 99)
+        
 	
+    #def _update_notifier(self, service, value):
+	#self.table.update_notifier("debug", service, value)
+    
+    
+    def specto_callback(self, service, value):
+	self.table.update_notifier(service, value)
+    
     
 if __name__ == "__main__":
     omnidock = omniDOCK()
     
+    gtk.main()

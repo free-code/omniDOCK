@@ -47,7 +47,7 @@ class DockTable(gtk.Table):
 	    service = configItem.findtext("service")
 	    current.set_service(service)
 	    #---DEBUG--#
-	    current.connect("show", self.update_notifier, "facebook", 2)
+	    #current.connect("show", self.update_notifier, "facebook", 2)
 	    self.attach(current,
 	                int(configItem.findtext("left_attach")),
 	                int(configItem.findtext("right_attach")),
@@ -56,7 +56,7 @@ class DockTable(gtk.Table):
 	    self.notifiers[service] = current
 	                
 	                
-    def update_notifier(self, debug, service, value):
+    def update_notifier(self, service, value):
 	current = self.notifiers[service]
 	current.set_badge(value)
 	                
