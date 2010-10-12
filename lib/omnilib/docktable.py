@@ -8,6 +8,7 @@ class DockTable(gtk.Table):
     def __init__(self, color):
 	self.color = color
 	self.configTree = self.get_config()
+	self.notifiers = {}
 	rows = int(self.configTree.findtext("rows"))
 	columns = int(self.configTree.findtext("columns"))
         super(DockTable, self).__init__(rows, columns, homogeneous=True)
@@ -43,12 +44,21 @@ class DockTable(gtk.Table):
     def _add_notifiers(self):
 	for configItem in self.configTree.findall("notifier"):
 	    current = notifier.Notifier()
-	    current.set_service(configItem.findtext("service"))
+	    service = configItem.findtext("service")
+	    current.set_service(service)
+	    #---DEBUG--#
+	    current.connect("show", self.update_notifier, "facebook", 2)
 	    self.attach(current,
 	                int(configItem.findtext("left_attach")),
 	                int(configItem.findtext("right_attach")),
 	                int(configItem.findtext("top_attach")),
 	                int(configItem.findtext("bottom_attach")))
+	    self.notifiers[service] = current
+	                
+	                
+    def update_notifier(self, debug, service, value):
+	current = self.notifiers[service]
+	current.set_badge(value)
 	                
 	
     def get_free_cells(self):

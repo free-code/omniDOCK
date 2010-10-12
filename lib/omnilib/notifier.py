@@ -14,6 +14,7 @@ class Notifier(gtk.Image):
     
     def set_badge(self, value):
 	self.badgeValue = value
+	print "Badge for %s is now" % self.service, value
     
     def _set_icon(self, service):
 	if service == "facebook":
