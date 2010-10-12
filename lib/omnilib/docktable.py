@@ -2,6 +2,7 @@
 import gtk
 from xml.etree.ElementTree import ElementTree
 from subprocess import Popen
+from omnilib import notifier
 
 class DockTable(gtk.Table):
     def __init__(self, color):
@@ -10,10 +11,11 @@ class DockTable(gtk.Table):
 	rows = int(self.configTree.findtext("rows"))
 	columns = int(self.configTree.findtext("columns"))
         super(DockTable, self).__init__(rows, columns, homogeneous=True)
-        self.add_launchers()
+        self._add_launchers()
+        self._add_notifiers()
 	
 	
-    def add_launchers(self):    
+    def _add_launchers(self):    
         #Pull launchers from XML config
 	for launcher in self.configTree.findall("launcher"):
 	    button = gtk.Button()
@@ -36,6 +38,17 @@ class DockTable(gtk.Table):
 	                int(launcher.findtext("right_attach")),
 	                int(launcher.findtext("top_attach")),
 	                int(launcher.findtext("bottom_attach")))
+	                
+	                
+    def _add_notifiers(self):
+	for configItem in self.configTree.findall("notifier"):
+	    current = notifier.Notifier()
+	    current.set_service(configItem.findtext("service"))
+	    self.attach(current,
+	                int(configItem.findtext("left_attach")),
+	                int(configItem.findtext("right_attach")),
+	                int(configItem.findtext("top_attach")),
+	                int(configItem.findtext("bottom_attach")))
 	                
 	
     def get_free_cells(self):

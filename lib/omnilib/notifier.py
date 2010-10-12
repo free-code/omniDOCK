@@ -3,6 +3,7 @@ import gtk
 
 class Notifier(gtk.Image):
     def __init__(self):
+	super(Notifier, self).__init__()
 	self.service = None
         self.badgeValue = None
     
@@ -16,7 +17,7 @@ class Notifier(gtk.Image):
     
     def _set_icon(self, service):
 	if service == "facebook":
-	    filename = "facebook.png"
+	    filename = "/home/josh/omniDOCK/bluefish.png"
 	self.set_from_file(filename)
 	
     
