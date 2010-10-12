@@ -42,9 +42,7 @@ class omniDOCK():
         dockGui.apply_config(self.appConfig)
         dockGui.show_window()
 	
-
-
-
+    
 if __name__ == "__main__":
     omnidock = omniDOCK()
     

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import gtk
 import docktable
-from Xlib import X, display, Xutil, Xatom
+
 
 class OmniDOCKGUI(gtk.Window):
     def __init__(self):
@@ -9,7 +9,7 @@ class OmniDOCKGUI(gtk.Window):
 	self.configTree = None
 	self.connect('destroy', gtk.main_quit)
 	self.set_type_hint(gtk.gdk.WINDOW_TYPE_HINT_DOCK)
-	#self.set_keep_above(True)
+
 	
     def add_docktable(self):
 	table = docktable.DockTable(self.configTree.findtext("window/bg"))
@@ -19,14 +19,17 @@ class OmniDOCKGUI(gtk.Window):
     def show_window(self):
 	gtk.main()
 
+
     def apply_strut(self, align):
 	top = self.get_toplevel().window
 	if align == "left":
 	    top.property_change("_NET_WM_STRUT", "CARDINAL", 32, 
 	                        gtk.gdk.PROP_MODE_REPLACE, [self.width, 0, 0, 0])
-	if align == "right":
+	elif align == "right":
 	    top.property_change("_NET_WM_STRUT", "CARDINAL", 32, 
 	                        gtk.gdk.PROP_MODE_REPLACE, [0, self.width, 0, 0])
+	else:
+	    raise ValueError("Invalid alignment.  Defaulting to 'left'")
 
 
     def apply_config(self, configTree):
@@ -63,11 +66,10 @@ class OmniDOCKGUI(gtk.Window):
             ypos = 0
         elif alignment == "left":
 	    #self.get_root_window().property_change("_NET_WM_STRUT", "CARDINAL", 32, gtk.gdk.PROP_MODE_REPLACE, [50, 0, 0, 0])
-	    
 	    xpos = 0
 	    ypos = 0
 	else:
-	    raise "Invalid alignment: %s.  Defaulting to 'left'"
+	    raise ValueError("Invalid alignment.  Defaulting to 'left'")
 	    xpos = 0
 	    ypos = 0
 	self.move(xpos,ypos)

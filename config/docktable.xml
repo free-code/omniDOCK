@@ -30,4 +30,11 @@
             <top_attach>0</top_attach>
             <bottom_attach>1</bottom_attach>
         </launcher>
+        <notifier>
+            <service>facebook</service>
+            <left_attach>2</left_attach>
+            <right_attach>3</right_attach>
+            <top_attach>1</top_attach>
+            <bottom_attach>2</bottom_attach>
+        </notifier>
 </docktable-config>
