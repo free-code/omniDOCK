@@ -34,9 +34,9 @@ class omniDOCK():
     """
 
     def __init__(self):
-	self.appConfig = dockconfig.DockConfig()
-    	self.appConfig.load()
-    	self.appConfig.save()
+        self.appConfig = dockconfig.DockConfig()
+        self.appConfig.load()
+        self.appConfig.save()
         self.specto = SpectoWrapper()
         dockGui = gui.OmniDOCKGUI()
         dockGui.apply_config(self.appConfig)
@@ -48,16 +48,15 @@ class omniDOCK():
         self.specto_callback("facebook", 2)
         self.specto_callback("facebook", 99)
         
-	
+    
     #def _update_notifier(self, service, value):
-	#self.table.update_notifier("debug", service, value)
+    #    self.table.update_notifier("debug", service, value)
     
     
     def specto_callback(self, service, value):
-	self.table.update_notifier(service, value)
+        self.table.update_notifier(service, value)
     
     
 if __name__ == "__main__":
     omnidock = omniDOCK()
-    
     gtk.main()
