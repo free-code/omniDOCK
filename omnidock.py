@@ -40,6 +40,9 @@ class omniDOCK():
     	#Launch specto wrapper
     	#FREDDIE - do you want the callback sent to wrapper's init or
     	#a separate start() function?  
+        self.appConfig = dockconfig.DockConfig()
+        self.appConfig.load()
+        self.appConfig.save()
         self.specto = SpectoWrapper()
         #instatiate gui and apply config
         dockGui = gui.OmniDOCKGUI()
@@ -58,7 +61,12 @@ class omniDOCK():
 	#This function exists to be passed to the specto wrapper
 	#It gives the wrapper access to the gui's update_notifier method
 	self.table.update_notifier(service, value)
+        
+   
     
+    def specto_callback(self, service, value):
+        self.table.update_notifier(service, value)
+   
     
 if __name__ == "__main__":
     omnidock = omniDOCK()

@@ -19,6 +19,7 @@
 # Name: specto_wrapper.py
 # Purpose: Instantiate and use classes from specto
 
+import sys; sys.path += ['lib/']
 from subprocess import Popen
 from spectlib import util
 
@@ -26,19 +27,12 @@ class SpectoWrapper:
     """
     Reuses code from the specto project
     """
-    
 
-    def __init__(self):
+    def __init__(self, gui_callback=None):
         """
-        Start specto in console mode, and set any useful instance variables
+        Set any useful instance variables
 
         >>> test = SpectoWrapper()
-
-        >>> type(test.running_process)
-        <class 'subprocess.Popen'>
-
-        >>> type(test.pid)
-        <type 'int'>
 
         >>> type(test.config_dir)
         <type 'str'>
@@ -46,21 +40,29 @@ class SpectoWrapper:
         >>> "specto" in test.config_dir
         True
         """
-        try:
-            self.running_process = Popen(["specto", "--console"])
-        except:
-            self.running_process = Popen(["./lib/specto", "--console"])
-        finally:
-            self.pid = self.running_process.pid
-
         self.config_dir = util.get_path("specto")
+        self.gui_callback = gui_callback
 
+    def start_daemon(self):
+        """
+        Start the specto daemon
 
-    def __del__(self):
+        >>> test = SpectoWrapper()
+
+        >>> test.start_daemon()
+
+        >>> type(test.specto_process)
+        <class 'subprocess.Popen'>
+
+        >>> type(test.specto_pid)
+        <type 'int'>
         """
-        Clean up before we go
-        """
-        self.running_process.kill()
+        try:
+            self.specto_process = Popen(["specto", "--console"])
+        except:
+            self.specto_process = Popen(["./lib/specto", "--console"])
+        finally:
+            self.specto_pid = self.specto_process.pid
 
 
     def watches(self):
@@ -94,6 +96,15 @@ class SpectoWrapper:
                 pass
 
         return watch_dictionary
+
+
+    def start_watching_the_watchlist(self, interval_in_minutes=5):
+        """
+        Watch the results of specto and update the gui
+        Just a stub right now until I can figure out a good time based
+        solution without causing the gui app to hang.
+        """
+        
 
 
 def _test():
