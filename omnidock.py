@@ -34,30 +34,32 @@ class omniDOCK():
     """
 
     def __init__(self):
+	#Load config class (custom elementTree from XML)
 	self.appConfig = dockconfig.DockConfig()
     	self.appConfig.load()
-    	self.appConfig.save()
+    	#Launch specto wrapper
+    	#FREDDIE - do you want the callback sent to wrapper's init or
+    	#a separate start() function?  
         self.specto = SpectoWrapper()
+        #instatiate gui and apply config
         dockGui = gui.OmniDOCKGUI()
         dockGui.apply_config(self.appConfig)
-        #dockGui.show_window()
+        #The table contains all dock widgets
         self.table = dockGui.table
         dockGui.show_all()
+        
         #faking notifications from specto
         self.specto_callback("facebook", 1)
         self.specto_callback("facebook", 2)
         self.specto_callback("facebook", 99)
-        
-	
-    #def _update_notifier(self, service, value):
-	#self.table.update_notifier("debug", service, value)
-    
+         
     
     def specto_callback(self, service, value):
+	#This function exists to be passed to the specto wrapper
+	#It gives the wrapper access to the gui's update_notifier method
 	self.table.update_notifier(service, value)
     
     
 if __name__ == "__main__":
     omnidock = omniDOCK()
-    
     gtk.main()

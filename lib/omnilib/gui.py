@@ -5,6 +5,7 @@ import docktable
 
 class OmniDOCKGUI(gtk.Window):
     def __init__(self):
+	#The window class is only a container for the table
 	super(OmniDOCKGUI, self).__init__(gtk.WINDOW_TOPLEVEL)
 	self.configTree = None
 	self.connect('destroy', gtk.main_quit)
@@ -12,12 +13,10 @@ class OmniDOCKGUI(gtk.Window):
 
 	
     def add_docktable(self):
-	self.table = docktable.DockTable(self.configTree.findtext("window/bg"))
+	#Add the table to the window
+	color = self.configTree.findtext("window/bg")
+	self.table = docktable.DockTable(color)
 	self.add(self.table)
-
-
-#    def show_window(self):
-#	gtk.main()
 
 
     def apply_strut(self, align):

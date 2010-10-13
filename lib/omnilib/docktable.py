@@ -18,7 +18,7 @@ class DockTable(gtk.Table):
 	
     def _add_launchers(self):    
         #Pull launchers from XML config
-	for launcher in self.configTree.findall("launcher"):
+	for element in self.configTree.findall("launcher"):
 	    button = gtk.Button()
 	    button.set_focus_on_click(False)
 	    #setting button color is surprisingly complex
@@ -29,31 +29,27 @@ class DockTable(gtk.Table):
             button.set_style(style)
             #Set icon
 	    image  = gtk.Image()
-	    image.set_from_file(launcher.findtext("icon"))
+	    image.set_from_file(element.findtext("icon"))
 	    button.set_image(image)
-	    command = launcher.findtext("exec")
+	    command = element.findtext("exec")
 	    #Connect click action and attach to table
 	    button.connect("clicked", self.launch, command)
-	    self.attach(button,
-	                int(launcher.findtext("left_attach")),
-	                int(launcher.findtext("right_attach")),
-	                int(launcher.findtext("top_attach")),
-	                int(launcher.findtext("bottom_attach")))
-	                
-	                
+	    self._add_to_table(element, button)
+	    
+	                    
     def _add_notifiers(self):
-	for configItem in self.configTree.findall("notifier"):
-	    current = notifier.Notifier()
-	    service = configItem.findtext("service")
-	    current.set_service(service)
-	    #---DEBUG--#
-	    #current.connect("show", self.update_notifier, "facebook", 2)
-	    self.attach(current,
-	                int(configItem.findtext("left_attach")),
-	                int(configItem.findtext("right_attach")),
-	                int(configItem.findtext("top_attach")),
-	                int(configItem.findtext("bottom_attach")))
-	    self.notifiers[service] = current
+	for element in self.configTree.findall("notifier"):
+	    noteObject = notifier.Notifier()
+	    service = element.findtext("service")
+	    noteObject.set_service(service)
+	    #grab attachment info, convert to integer, attach
+	    self._add_to_table(element, noteObject)
+	    self.notifiers[service] = noteObject
+	 
+	 
+    def _add_to_table(self, element, widget):
+	coords = map(int, map(element.findtext, ("left_attach", "right_attach", "top_attach", "bottom_attach")))
+	self.attach(widget, *coords)
 	                
 	                
     def update_notifier(self, service, value):
