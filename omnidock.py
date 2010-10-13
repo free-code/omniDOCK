@@ -25,6 +25,8 @@
 import sys; sys.path += ['lib/', 'config/']
 from omnilib.specto_wrapper import SpectoWrapper
 from omnilib import gui
+#Currently have to hard code the import, working on this
+import gizmos.example
 import dockconfig
 import gtk
 
@@ -37,9 +39,6 @@ class omniDOCK():
 	#Load config class (custom elementTree from XML)
 	self.appConfig = dockconfig.DockConfig()
     	self.appConfig.load()
-    	#Launch specto wrapper
-    	#FREDDIE - do you want the callback sent to wrapper's init or
-    	#a separate start() function?  
         self.appConfig = dockconfig.DockConfig()
         self.appConfig.load()
         self.appConfig.save()
@@ -55,7 +54,9 @@ class omniDOCK():
         self.specto_callback("facebook", 1)
         self.specto_callback("facebook", 2)
         self.specto_callback("facebook", 99)
-         
+        self.get_gizmos()
+        #thingy = example
+
     
     def specto_callback(self, service, value):
 	#This function exists to be passed to the specto wrapper
@@ -66,6 +67,10 @@ class omniDOCK():
     
     def specto_callback(self, service, value):
         self.table.update_notifier(service, value)
+        
+    def get_gizmos(self):
+	#Currently hardcoded a single gizmo for testing
+	giz = gizmos.example.get_gizmo()
    
     
 if __name__ == "__main__":
