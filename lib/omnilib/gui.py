@@ -17,6 +17,7 @@ class OmniDOCKGUI(gtk.Window):
 	color = self.configTree.findtext("window/bg")
 	self.table = docktable.DockTable(color)
 	self.add(self.table)
+	self.set_focus(self.table)
 
 
     def apply_strut(self, align):
