@@ -21,10 +21,10 @@ class TerminalGizmo:
 	v = vte.Terminal ()
 	v.connect ("child-exited", lambda term: gtk.main_quit())
 	v.fork_command()
-	window = gtk.Window()
+	window = gtk.ScrolledWindow()
 	window.add(v)
 	#window.connect('delete-event', lambda window, event: gtk.main_quit())
-	#window.show_all()
+	window.show_all()
 	#gtk.main()
         return window
 

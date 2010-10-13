@@ -50,6 +50,19 @@ class DockTable(gtk.Table):
     def _add_to_table(self, element, widget):
 	coords = map(int, map(element.findtext, ("left_attach", "right_attach", "top_attach", "bottom_attach")))
 	self.attach(widget, *coords)
+	
+    def add_gizmo(self,giz):
+	#Faking the intelligent placement for testing
+	print "attempting to place terminal"
+	print giz
+	gizmo = giz[0]
+	height = giz[1][0]
+	width = giz[1][1]
+	self.attach(gizmo,
+	            0,
+	            4,
+	            5,
+	            8)
 	                
 	                
     def update_notifier(self, service, value):
