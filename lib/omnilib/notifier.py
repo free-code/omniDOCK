@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 import gtk
+import PythonMagick
+import random
+
 
 class Notifier(gtk.Image):
     def __init__(self):
@@ -19,6 +22,17 @@ class Notifier(gtk.Image):
     def _set_icon(self, service):
 	if service == "facebook":
 	    filename = "bluefish.png"
-	self.set_from_file(filename)
+	    
+
+	magickImage = PythonMagick.Image(filename)
+	#magickImage.rotate(15)
+	magickImage.fillColor('#FFFFFF')
+	magickImage.annotate("beets", PythonMagick._PythonMagick.GravityType.SouthGravity)
+	tmpFile = "/tmp/temp" + str(random.randint(1,10000))
+	magickImage.write(tmpFile)
+	
+	print dir(magickImage.annotate)
+	
+	self.set_from_file(tmpFile)
 	
     

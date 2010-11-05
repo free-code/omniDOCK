@@ -4,6 +4,7 @@ from xml.etree.ElementTree import ElementTree
 from subprocess import Popen
 from omnilib import notifier
 
+
 class DockTable(gtk.Table):
     def __init__(self, color):
 	self.color = color

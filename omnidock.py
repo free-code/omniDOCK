@@ -71,7 +71,7 @@ class omniDOCK():
     def get_gizmos(self):
 	#Currently hardcoded a single gizmo for testing
 	giz = gizmos.example.get_gizmo()
-	self.table.add_gizmo(giz)
+	#self.table.add_gizmo(giz)
    
     
 if __name__ == "__main__":
