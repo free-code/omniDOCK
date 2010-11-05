@@ -4,8 +4,8 @@
         <rows>16</rows>
         <columns>4</columns>
 	<launcher>
-            <name>True</name>
-	    <icon>applets-screenshooter.png</icon>
+            <name>Firefox</name>
+	    <icon>images/firefox.png</icon>
 	    <exec>firefox</exec>
             <left_attach>0</left_attach>
             <right_attach>1</right_attach>
@@ -13,17 +13,17 @@
             <bottom_attach>1</bottom_attach>
         </launcher>
         <launcher>
-            <name>True</name>
-	    <icon>visor.png</icon>
-	    <exec>firefox</exec>
+            <name>File Manager</name>
+	    <icon>images/file-manager.png</icon>
+	    <exec>nautilus</exec>
             <left_attach>1</left_attach>
             <right_attach>2</right_attach>
             <top_attach>0</top_attach>
             <bottom_attach>1</bottom_attach>
         </launcher>
         <launcher>
-            <name>True</name>
-	    <icon>palm-pilot.png</icon>
+            <name>Terminal</name>
+	    <icon>images/terminal.png</icon>
 	    <exec>firefox</exec>
             <left_attach>2</left_attach>
             <right_attach>3</right_attach>

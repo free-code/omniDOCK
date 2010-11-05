@@ -42,7 +42,7 @@ class DockTable(gtk.Table):
 	for element in self.configTree.findall("notifier"):
 	    noteObject = notifier.Notifier()
 	    service = element.findtext("service")
-	    noteObject.set_service(service)
+	    noteObject.update(service, 0)
 	    #grab attachment info, convert to integer, attach
 	    self._add_to_table(element, noteObject)
 	    self.notifiers[service] = noteObject
@@ -68,7 +68,7 @@ class DockTable(gtk.Table):
 	                
     def update_notifier(self, service, value):
 	current = self.notifiers[service]
-	current.set_badge(value)
+	current.update(service, value)
 	                
 	
     def get_free_cells(self):
