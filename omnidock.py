@@ -51,22 +51,17 @@ class omniDOCK():
         dockGui.show_all()
         
         #faking notifications from specto
-        self.specto_callback("facebook", 1)
-        self.specto_callback("facebook", 2)
-        self.specto_callback("facebook", 99)
+        #self.specto_callback("facebook", 1)
+        #self.specto_callback("facebook", 2)
+        #self.specto_callback("facebook", 99)
         self.get_gizmos()
-        #thingy = example
-
+        
     
     def specto_callback(self, service, value):
 	#This function exists to be passed to the specto wrapper
 	#It gives the wrapper access to the gui's update_notifier method
 	self.table.update_notifier(service, value)
         
-   
-    
-    def specto_callback(self, service, value):
-        self.table.update_notifier(service, value)
         
     def get_gizmos(self):
 	#Currently hardcoded a single gizmo for testing

@@ -24,7 +24,7 @@
         <launcher>
             <name>Terminal</name>
 	    <icon>images/terminal.png</icon>
-	    <exec>firefox</exec>
+	    <exec>gnome-terminal</exec>
             <left_attach>2</left_attach>
             <right_attach>3</right_attach>
             <top_attach>0</top_attach>
