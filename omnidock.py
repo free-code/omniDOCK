@@ -49,13 +49,8 @@ class omniDOCK():
         #The table contains all dock widgets
         self.table = dockGui.table
         dockGui.show_all()
-        
-        #faking notifications from specto
-        #self.specto_callback("facebook", 1)
-        #self.specto_callback("facebook", 2)
-        #self.specto_callback("facebook", 99)
         self.get_gizmos()
-        
+ 
     
     def specto_callback(self, service, value):
 	#This function exists to be passed to the specto wrapper
