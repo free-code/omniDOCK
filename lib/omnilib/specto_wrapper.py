@@ -58,7 +58,7 @@ class SpectoWrapper:
         <type 'int'>
         """
         try:
-            self.specto_process = Popen(["specto", "--console"])
+            self.specto_process = Popen(["specto"])
         except:
             self.specto_process = Popen(["./lib/specto", "--console"])
         finally:
@@ -98,12 +98,12 @@ class SpectoWrapper:
         return watch_dictionary
 
 
-    def start_watching_the_watchlist(self, interval_in_minutes=5):
-        """
-        Watch the results of specto and update the gui
-        Just a stub right now until I can figure out a good time based
-        solution without causing the gui app to hang.
-        """
+#    def start_watching_the_watchlist(self, interval_in_minutes=5):
+#        """
+#        Watch the results of specto and update the gui
+#        Just a stub right now until I can figure out a good time based
+#        solution without causing the gui app to hang.
+#        """
         
 
 

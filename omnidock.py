@@ -43,6 +43,7 @@ class omniDOCK():
         self.appConfig.load()
         self.appConfig.save()
         self.specto = SpectoWrapper()
+	self.specto.start_daemon()
         #instatiate gui and apply config
         dockGui = gui.OmniDOCKGUI()
         dockGui.apply_config(self.appConfig)

@@ -26,8 +26,6 @@
 
 global GTK
 global DEBUG #the DEBUG constant which controls how much info is output
-GTK = False
-DEBUG = False
 
 import os
 import sys
