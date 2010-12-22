@@ -1,5 +1,5 @@
 <omnidock-config>
-        <some-option>Doe a deer</some-option>
+    <gizmoDir>gizmos</gizmoDir>
 	<window>
             <decorated>True</decorated>
 	    <width>240</width>

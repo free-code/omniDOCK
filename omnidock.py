@@ -36,13 +36,11 @@ class omniDOCK():
     """
 
     def __init__(self):
-	#Load config class (custom elementTree from XML)
-	self.appConfig = dockconfig.DockConfig()
-    	self.appConfig.load()
+
         self.appConfig = dockconfig.DockConfig()
         self.appConfig.load()
         self.appConfig.save()
-        self.specto = SpectoWrapper()
+        self.specto = SpectoWrapper(self.specto_callback)
 	self.specto.start_daemon()
         #instatiate gui and apply config
         dockGui = gui.OmniDOCKGUI()

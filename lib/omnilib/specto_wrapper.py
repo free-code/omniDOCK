@@ -22,6 +22,8 @@
 import sys; sys.path += ['lib/']
 from subprocess import Popen
 from spectlib import util
+import time
+import threading
 
 class SpectoWrapper:
     """
@@ -57,21 +59,23 @@ class SpectoWrapper:
         >>> type(test.specto_pid)
         <type 'int'>
         """
+        #threading.Thread(self.monitor()
+        
         try:
             self.specto_process = Popen(["specto"])
         except:
             self.specto_process = Popen(["./lib/specto", "--console"])
         finally:
             self.specto_pid = self.specto_process.pid
+            
 
-
-    def watches(self):
+    def get_watches(self):
         """
         Return a dictionary of watches
 
         >>> test = SpectoWrapper()
 
-        >>> type(test.watches())
+        >>> type(test.get_watches())
         <type 'dict'>
         """
         watches_list = self.config_dir + "/watches.list"
@@ -94,10 +98,20 @@ class SpectoWrapper:
 
             elif line == '':
                 pass
-
+        #print watch_dictionary
+        #self.gui_callback(
         return watch_dictionary
 
-
+    def monitor(self, last_status={}):
+	while True:
+	    print "manual checking"
+	    current_status = self.get_watches()
+	    for key in current_status.iterkeys():
+	        if not key in last_status or current_status[key] != last_status[key]:
+		    print "### Updating %s" % key
+	    time.sleep(5)
+		
+	
 #    def start_watching_the_watchlist(self, interval_in_minutes=5):
 #        """
 #        Watch the results of specto and update the gui

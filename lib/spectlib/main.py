@@ -72,7 +72,7 @@ class Specto:
         self.check_instance() #see if specto is already running
         self.specto_gconf = specto_gconf
         self.check_default_settings()
-        self.GTK = GTK
+        #self.GTK = GTK
 
         self.connection_manager = conmgr.get_net_listener()
         self.use_keyring = self.specto_gconf.get_entry("use_keyring")
