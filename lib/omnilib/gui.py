@@ -16,6 +16,7 @@ class OmniDOCKGUI(gtk.Window):
 	#Add the table to the window
 	color = self.configTree.findtext("window/bg")
 	self.table = docktable.DockTable(color)
+	
 	self.add(self.table)
 	self.set_focus(self.table)
 
@@ -73,4 +74,6 @@ class OmniDOCKGUI(gtk.Window):
 	    xpos = 0
 	    ypos = 0
 	self.move(xpos,ypos)
-	    
+
+	
+	

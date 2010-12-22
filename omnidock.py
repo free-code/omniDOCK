@@ -25,8 +25,6 @@
 import sys; sys.path += ['lib/', 'config/']
 from omnilib.specto_wrapper import SpectoWrapper
 from omnilib import gui
-#Currently have to hard code the import, working on this
-import gizmos.example
 import dockconfig
 import gtk
 
@@ -59,8 +57,9 @@ class omniDOCK():
         
     def get_gizmos(self):
 	#Currently hardcoded a single gizmo for testing
-	giz = gizmos.example.get_gizmo()
+	#giz = fish.get_gizmo()
 	#self.table.add_gizmo(giz)
+	pass
    
     
 if __name__ == "__main__":
