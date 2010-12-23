@@ -90,49 +90,33 @@ class DockTable(gtk.Table):
     
     
     def launcher_right_clicked(self, button, event):
-	print "Got click signal"
 	if(event.button != 3): 
             return False 
         menu = gtk.Menu()
-        menu.set_title("Launcher Options")
-        menu.add(gtk.MenuItem("I'm a Cucumber"))
+        item1 = gtk.MenuItem("I'm a Cucumber")
+        item1.connect("activate", self.add_launcher_gui)
+        menu.add(item1)
+        
         menu.append(gtk.MenuItem("Me too"))
         menu.show_all()
-        menu.popup(None, None, self.menu_position, event.button, event.time, button)
-
         
-    def menu_position(self, menu, button):
-        screen = button.get_screen()
-        monitor = screen.get_monitor_at_window(button.window)
-        monitor_allocation = screen.get_monitor_geometry(monitor)
+        menu.popup(None, None, None, event.button, event.time)
+   
 
-        x, y = button.window.get_origin()
-        x += button.allocation.x
-        y += button.allocation.y
-
-        menu_width, menu_height = menu.size_request()
-
-        if x + menu_width >= monitor_allocation.width:
-            x -= menu_width - button.allocation.width
-        elif x - menu_width <= 0:
-            pass
-        else:
-            if x <= monitor_allocation.width * 3 / 4:
-                pass
-            else:
-                x -= menu_width - button.allocation.width
-    
-        if y + button.allocation.height + menu_height >= monitor_allocation.height:
-            y -= menu_height
-        elif y - menu_height <= 0:
-            y += button.allocation.height
-        else:
-            if y <= monitor_allocation.height * 3 / 4:
-                y += button.allocation.height
-            else:
-                y -= menu_height
-    
-        return (x, y, False)
+    def add_launcher_gui(self, data):
+        win = gtk.Window()
+        vbox = gtk.VBox()
+        entry = gtk.Entry()
+        label = gtk.Label("Enter command to launch")
+        button = gtk.Button("OK")
+        button.connect("clicked", self.launcher_gui_cb, win, entry)
+        vbox.pack_start(label)
+        vbox.pack_start(entry)
+        vbox.pack_end(button)
+        win.add(vbox)
+        win.show_all()
         
-        
-        
+    def launcher_gui_cb(self, data, win, entry):
+	result = entry.get_text()
+	print result
+	win.hide_all()
