@@ -2,7 +2,7 @@
 import gtk
 from xml.etree.ElementTree import ElementTree
 from subprocess import Popen
-from omnilib import notifier
+from omnilib import notifier, addlauncherdialog
 
 
 class DockTable(gtk.Table):
@@ -13,6 +13,7 @@ class DockTable(gtk.Table):
 	rows = int(self.configTree.findtext("rows"))
 	columns = int(self.configTree.findtext("columns"))
         super(DockTable, self).__init__(rows, columns, homogeneous=True)
+        
         self._add_launchers()
         self._add_notifiers()
 	
@@ -90,31 +91,23 @@ class DockTable(gtk.Table):
     
     
     def launcher_right_clicked(self, button, event):
+        print "fnerg"
 	if(event.button != 3): 
             return False 
         menu = gtk.Menu()
-        item1 = gtk.MenuItem("I'm a Cucumber")
-        item1.connect("activate", self.add_launcher_gui)
+        item1 = gtk.MenuItem("Add a Launcher")
+        item1.connect("activate", self._show_add_launcher_gui)
         menu.add(item1)
         
-        menu.append(gtk.MenuItem("Me too"))
+        menu.append(gtk.MenuItem("DUMMY Remove Launcher"))
         menu.show_all()
         
         menu.popup(None, None, None, event.button, event.time)
    
 
-    def add_launcher_gui(self, data):
-        win = gtk.Window()
-        vbox = gtk.VBox()
-        entry = gtk.Entry()
-        label = gtk.Label("Enter command to launch")
-        button = gtk.Button("OK")
-        button.connect("clicked", self.launcher_gui_cb, win, entry)
-        vbox.pack_start(label)
-        vbox.pack_start(entry)
-        vbox.pack_end(button)
-        win.add(vbox)
-        win.show_all()
+    def _show_add_launcher_gui(self, data):
+        diag = addlauncherdialog.AddLauncherDialog()
+        result = diag.show()
         
     def launcher_gui_cb(self, data, win, entry):
 	result = entry.get_text()

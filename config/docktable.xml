@@ -4,9 +4,9 @@
         <rows>16</rows>
         <columns>4</columns>
 	<launcher>
-            <name>Firefox</name>
-	    <icon>images/firefox.png</icon>
-	    <exec>firefox</exec>
+            <name>Google Chrome</name>
+	    <icon>images/browser.png</icon>
+	    <exec>google-chrome</exec>
             <left_attach>0</left_attach>
             <right_attach>1</right_attach>
             <top_attach>0</top_attach>
@@ -15,7 +15,7 @@
         <launcher>
             <name>File Manager</name>
 	    <icon>images/file-manager.png</icon>
-	    <exec>nautilus</exec>
+	    <exec>thunar</exec>
             <left_attach>1</left_attach>
             <right_attach>2</right_attach>
             <top_attach>0</top_attach>
@@ -27,6 +27,15 @@
 	    <exec>gnome-terminal</exec>
             <left_attach>2</left_attach>
             <right_attach>3</right_attach>
+            <top_attach>0</top_attach>
+            <bottom_attach>1</bottom_attach>
+        </launcher>
+        <launcher>
+            <name>Netbeans</name>
+            <icon>images/editor.png</icon>
+            <exec>/home/josh/dev/netbeans6/bin/netbeans</exec>
+            <left_attach>3</left_attach>
+            <right_attach>4</right_attach>
             <top_attach>0</top_attach>
             <bottom_attach>1</bottom_attach>
         </launcher>

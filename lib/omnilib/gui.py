@@ -9,6 +9,7 @@ class OmniDOCKGUI(gtk.Window):
 	super(OmniDOCKGUI, self).__init__(gtk.WINDOW_TOPLEVEL)
 	self.configTree = None
 	self.connect('destroy', gtk.main_quit)
+
 	self.set_type_hint(gtk.gdk.WINDOW_TYPE_HINT_DOCK)
 
 	
@@ -16,7 +17,7 @@ class OmniDOCKGUI(gtk.Window):
 	#Add the table to the window
 	color = self.configTree.findtext("window/bg")
 	self.table = docktable.DockTable(color)
-	
+	self.connect("button_press_event", self.table.launcher_right_clicked)
 	self.add(self.table)
 	self.set_focus(self.table)
 

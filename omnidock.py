@@ -23,7 +23,7 @@
 # Purpose: Controller for all aspects of omniDOCK
 
 import sys; sys.path += ['lib/', 'config/']
-from omnilib.specto_wrapper import SpectoWrapper
+#from omnilib.specto_wrapper import SpectoWrapper
 from omnilib import gui
 import dockconfig
 import gtk
@@ -38,8 +38,7 @@ class omniDOCK():
         self.appConfig = dockconfig.DockConfig()
         self.appConfig.load()
         self.appConfig.save()
-        self.specto = SpectoWrapper(self.specto_callback)
-	self.specto.start_daemon()
+
         #instatiate gui and apply config
         dockGui = gui.OmniDOCKGUI()
         dockGui.apply_config(self.appConfig)
@@ -47,14 +46,8 @@ class omniDOCK():
         self.table = dockGui.table
         dockGui.show_all()
         self.get_gizmos()
- 
-    
-    def specto_callback(self, service, value):
-	#This function exists to be passed to the specto wrapper
-	#It gives the wrapper access to the gui's update_notifier method
-	self.table.update_notifier(service, value)
-        
-        
+
+
     def get_gizmos(self):
 	#Currently hardcoded a single gizmo for testing
 	#giz = fish.get_gizmo()
