@@ -26,11 +26,17 @@ class AddLauncherDialog(gtk.Window):
         iconBrowseButton = gtk.Button("Browse")
         iconBrowseButton.connect("clicked", self._browse_for_file)
 
+        execLabel = gtk.Label("Command:")
+        self.execEntry = gtk.Entry()
+
+
         table.attach(nameLabel,0,2,1,2)
-        table.attach(self.nameEntry, 2,7,1,2)
+        table.attach(self.nameEntry, 2,6,1,2)
         table.attach(iconLabel, 0,2,2,3)
-        table.attach(self.iconEntry,2,7,2,3)
-        table.attach(iconBrowseButton,7,8,2,3)
+        table.attach(self.iconEntry,2,6,2,3)
+        table.attach(iconBrowseButton,6,8,2,3)
+        table.attach(execLabel,0,2,3,4)
+        table.attach(self.execEntry,2,6,3,4)
         table.attach(cancelButton, 0,3,7,8)
         table.attach(okButton,5,8,7,8)
         self.add(table)
@@ -39,7 +45,7 @@ class AddLauncherDialog(gtk.Window):
     def _ok_clicked(self, data):
         self.result["name"] = self.nameEntry.get_text()
         self.result["icon"] = self.iconEntry.get_text()
-        self.result["exec"] = "firefox"
+        self.result["exec"] = self.execEntry.get_text()
         self.result["attach"] = (0,1,3,4)
         self.add_launcher_cb(self.result)
         self.destroy()
@@ -68,6 +74,3 @@ class AddLauncherDialog(gtk.Window):
         elif response == gtk.RESPONSE_CANCEL:
             print 'Closed, no files selected'
         iconDialog.destroy()
-
-    def get_details(self):
-        return self.result
