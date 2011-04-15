@@ -7,39 +7,46 @@ from omnilib import notifier, addlauncherdialog
 
 class DockTable(gtk.Table):
     def __init__(self, color):
-	self.color = color
+        self.color = color
 	self.configTree = self.get_config()
 	self.notifiers = {}
 	rows = int(self.configTree.findtext("rows"))
 	columns = int(self.configTree.findtext("columns"))
         super(DockTable, self).__init__(rows, columns, homogeneous=True)
         
-        self._add_launchers()
-        self._add_notifiers()
+        self._add_saved_launchers()
+        #self._add_notifiers()
 	
 	
-    def _add_launchers(self):    
+    def _add_saved_launchers(self):
         #Pull launchers from XML config
 	for element in self.configTree.findall("launcher"):
-	    button = gtk.Button()
-	    button.set_focus_on_click(False)
-	    #setting button color is surprisingly complex
-            cmap = button.get_colormap() 
-            color = cmap.alloc_color(self.color)
-            style = button.get_style().copy()
-            style.bg[gtk.STATE_NORMAL] = color
-            button.set_style(style)
-            #Set icon
-	    image  = gtk.Image()
-	    image.set_from_file(element.findtext("icon"))
-	    button.set_image(image)
-	    command = element.findtext("exec")
-	    #Connect click action and attach to table
-	    button.connect("clicked", self.launch, command)
-	    button.connect("button_press_event", self.launcher_right_clicked)
-	    self._add_to_table(element, button)
-	    
-	                    
+	    iconPath = element.findtext("icon")
+            command = element.findtext("exec")
+            name = element.findtext("name")
+	   
+            coords = map(int, map(element.findtext, ("left_attach", "right_attach", "top_attach", "bottom_attach")))
+	    details = {"name": name, "exec": command, "attach": coords, "icon":iconPath}
+            self._add_single_launcher(details)
+
+
+    def _add_single_launcher(self, details):
+        image  = gtk.Image()
+        image.set_from_file(details["icon"])
+        newButton = gtk.Button()
+        newButton.set_focus_on_click(False)
+	cmap = newButton.get_colormap()
+        color = cmap.alloc_color(self.color)
+        style = newButton.get_style().copy()
+        style.bg[gtk.STATE_NORMAL] = color
+        newButton.set_style(style)
+	newButton.set_image(image)
+        newButton.connect("clicked", self.launch, details["exec"])
+	newButton.connect("button_press_event", self.launcher_right_clicked)
+        print "Adding", details
+        self.attach(newButton, *details["attach"])
+        self.show_all()
+
     def _add_notifiers(self):
 	for element in self.configTree.findall("notifier"):
 	    noteObject = notifier.Notifier()
@@ -50,10 +57,6 @@ class DockTable(gtk.Table):
 	    self.notifiers[service] = noteObject
 	 
 	 
-    def _add_to_table(self, element, widget):
-	coords = map(int, map(element.findtext, ("left_attach", "right_attach", "top_attach", "bottom_attach")))
-	self.attach(widget, *coords)
-	
     def add_gizmo(self,giz):
 	#Faking the intelligent placement for testing
 	gizmo = giz[0]
@@ -91,7 +94,6 @@ class DockTable(gtk.Table):
     
     
     def launcher_right_clicked(self, button, event):
-        print "fnerg"
 	if(event.button != 3): 
             return False 
         menu = gtk.Menu()
@@ -106,8 +108,8 @@ class DockTable(gtk.Table):
    
 
     def _show_add_launcher_gui(self, data):
-        diag = addlauncherdialog.AddLauncherDialog()
-        result = diag.show()
+        diag = addlauncherdialog.AddLauncherDialog(self._add_single_launcher)
+        diag.show()
         
     def launcher_gui_cb(self, data, win, entry):
 	result = entry.get_text()
