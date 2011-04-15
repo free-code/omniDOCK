@@ -46,7 +46,7 @@ class AddLauncherDialog(gtk.Window):
         self.result["name"] = self.nameEntry.get_text()
         self.result["icon"] = self.iconEntry.get_text()
         self.result["exec"] = self.execEntry.get_text()
-        self.result["attach"] = (0,1,3,4)
+        self.result["attach"] = "auto"
         self.add_launcher_cb(self.result)
         self.destroy()
 

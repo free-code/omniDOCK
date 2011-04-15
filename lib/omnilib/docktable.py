@@ -3,6 +3,7 @@ import gtk
 from xml.etree.ElementTree import ElementTree
 from subprocess import Popen
 from omnilib import notifier, addlauncherdialog
+from operator import itemgetter, attrgetter
 
 
 class DockTable(gtk.Table):
@@ -43,19 +44,25 @@ class DockTable(gtk.Table):
 	newButton.set_image(image)
         newButton.connect("clicked", self.launch, details["exec"])
 	newButton.connect("button_press_event", self.launcher_right_clicked)
+        spaces = []
+        if details["attach"] == "auto":
+            open_spaces=self.get_free_cells()
+            for i in open_spaces:
+                spaces.append(i)
+                #print sorted_spaces
+            sorted_spaces = sorted(spaces)
+            print sorted_spaces
+            first_spot = sorted_spaces[0]
+            print first_spot
+            details["attach"] = (first_spot[1],
+                                 first_spot[1] + 1,
+                                 first_spot[0],
+                                 first_spot[0] + 1)
         print "Adding", details
         self.attach(newButton, *details["attach"])
         self.show_all()
+        
 
-    def _add_notifiers(self):
-	for element in self.configTree.findall("notifier"):
-	    noteObject = notifier.Notifier()
-	    service = element.findtext("service")
-	    noteObject.update(service, 0)
-	    #grab attachment info, convert to integer, attach
-	    self._add_to_table(element, noteObject)
-	    self.notifiers[service] = noteObject
-	 
 	 
     def add_gizmo(self,giz):
 	#Faking the intelligent placement for testing
@@ -74,10 +81,10 @@ class DockTable(gtk.Table):
 	#This is the function from the awesome guy on StackOverflow.  
 	#Thanks Geoff!
 	table = self
-        free_cells = set([(x,y) for x in range(table.props.n_columns) for y in range(table.props.n_rows)])
+        free_cells = set([(y,x) for x in range(table.props.n_columns) for y in range(table.props.n_rows)])
 	def func(child):
 	    (l,r,t,b) = table.child_get(child, 'left-attach','right-attach','top-attach','bottom-attach')
-	    used_cells = set([(x,y) for x in range(l,r) for y in range(t,b)])
+	    used_cells = set([(y,x) for x in range(l,r) for y in range(t,b)])
 	    free_cells.difference_update(used_cells)
 	table.foreach(func)
         return free_cells
