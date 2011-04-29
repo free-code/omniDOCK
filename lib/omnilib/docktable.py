@@ -83,8 +83,6 @@ class DockTable(gtk.Table):
 
     def _add_launcher_to_config(self, details):
         #Get the root node
-        for x in details.keys():
-            print x, details[x]
         rootElement = self.configTree.getroot()
         launcherElement = ETree.Element("launcher")
         for elem in details.keys():
@@ -136,7 +134,6 @@ class DockTable(gtk.Table):
                     # it's perfectly ok to get an index error for rows
                     #that don't exist
                     pass
-            print "rows", rows
             result = {}
             result["left_attach"] = row[0][1]
             result["right_attach"] = row[0][1] + width
@@ -183,7 +180,7 @@ class DockTable(gtk.Table):
         menu.append(removeButton)
         menu.show_all()
         
-        menu.popup(None, None, None, eve.button, event.time)
+        menu.popup(None, None, None, event.button, event.time)
    
 
     def _show_add_launcher_gui(self, data):

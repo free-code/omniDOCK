@@ -63,10 +63,10 @@ class omniDOCK():
             for subDir in gizmoDirs:
                 fullPath = subDir[0]
                 name = fullPath.split('/').pop()
-                print subDir
                 f, filename, description = imp.find_module(name)
                 module = imp.load_module(name, f, filename, description)
                 gizmo = module.get_gizmo()
+                location = {}
                 if len(gizmo) > 3:
                     coords = gizmo[3]
                     print "coords =", coords
@@ -80,14 +80,8 @@ class omniDOCK():
                                          location["right_attach"],
                                          location["top_attach"],
                                          location["bottom_attach"])
-            #print "import", name, "from", pathname, description
+
              
-            
-        
-
-#import __builtin__
-#__builtin__.__import__ = gizmo_import
-
 
 if __name__ == "__main__":
     omnidock = omniDOCK()
