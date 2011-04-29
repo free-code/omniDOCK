@@ -3,13 +3,13 @@ from xml.etree.ElementTree import ElementTree
 
 class DockConfig(ElementTree):
     def __init__(self):
-	self.configFile = "config/dockconfig.xml"
+	self.configFile = "config/appconfig.xml"
 	
 	
     def load(self):
     	self.parse(self.configFile)
         self._verify()
-    	
+
     	
     def save(self):
 	self._verify()

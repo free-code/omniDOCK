@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
+import sys; sys.path += ['lib/', 'config/']
+import contentconfig
 import gtk
-from xml.etree.ElementTree import ElementTree
+import xml.etree.ElementTree as ETree
 from subprocess import Popen
 from omnilib import notifier, addlauncherdialog
 from operator import itemgetter, attrgetter
@@ -9,13 +11,18 @@ from operator import itemgetter, attrgetter
 class DockTable(gtk.Table):
     def __init__(self, color):
         self.color = color
-	self.configTree = self.get_config()
+	self.configTree = contentconfig.ContentConfig()
+        self.configTree.load()
 	self.notifiers = {}
 	rows = int(self.configTree.findtext("rows"))
 	columns = int(self.configTree.findtext("columns"))
         super(DockTable, self).__init__(rows, columns, homogeneous=True)
         
-        self._add_saved_launchers()
+        try:
+            self._add_saved_launchers()
+        except Exception as err:
+            print err
+            print "Failed to load launchers from config file"
         #self._add_notifiers()
 	
 	
@@ -27,13 +34,19 @@ class DockTable(gtk.Table):
             name = element.findtext("name")
 	   
             coords = map(int, map(element.findtext, ("left_attach", "right_attach", "top_attach", "bottom_attach")))
-	    details = {"name": name, "exec": command, "attach": coords, "icon":iconPath}
-            self._add_single_launcher(details)
+	    details = {"name": name, "exec": command,
+            "left_attach": coords[0],
+            "right_attach": coords[1],
+            "top_attach": coords[2],
+            "bottom_attach": coords[3],
+            "icon":iconPath,
+            "auto": False}
+            self._add_single_launcher(details, isnew=False)
 
 
-    def _add_single_launcher(self, details):
+    def _add_single_launcher(self, details, isnew):
         image  = gtk.Image()
-        image.set_from_file(details["icon"])
+        image.set_from_file(details["icon"])       
         newButton = gtk.Button()
         newButton.set_focus_on_click(False)
 	cmap = newButton.get_colormap()
@@ -45,23 +58,42 @@ class DockTable(gtk.Table):
         newButton.connect("clicked", self.launch, details["exec"])
 	newButton.connect("button_press_event", self.launcher_right_clicked)
         spaces = []
-        if details["attach"] == "auto":
+        if details["auto"] == "true":
             open_spaces=self.get_free_cells()
             for i in open_spaces:
                 spaces.append(i)
                 #print sorted_spaces
             sorted_spaces = sorted(spaces)
-            print sorted_spaces
             first_spot = sorted_spaces[0]
-            print first_spot
-            details["attach"] = (first_spot[1],
-                                 first_spot[1] + 1,
-                                 first_spot[0],
-                                 first_spot[0] + 1)
-        print "Adding", details
-        self.attach(newButton, *details["attach"])
+            details["left_attach"] = first_spot[1]
+            details["right_attach"] = first_spot[1] + 1
+            details["top_attach"] = first_spot[0]
+            details["bottom_attach"] = first_spot[0] + 1
+            
+
+        self.attach(newButton, details["left_attach"],
+                               details["right_attach"],
+                               details["top_attach"],
+                               details["bottom_attach"])
+        if isnew == True:
+          self._add_launcher_to_config(details)
         self.show_all()
         
+
+    def _add_launcher_to_config(self, details):
+        #Get the root node
+        for x in details.keys():
+            print x, details[x]
+        rootElement = self.configTree.getroot()
+        launcherElement = ETree.Element("launcher")
+        for elem in details.keys():
+            if type(details[elem]) is int:
+                details[elem] = str(details[elem])
+            thisNode = ETree.SubElement(launcherElement, elem)
+            thisNode.text = details[elem]
+        ETree.dump(rootElement)
+        rootElement.append(launcherElement)
+        self.configTree.save()
 
 	 
     def add_gizmo(self,giz):
@@ -91,24 +123,26 @@ class DockTable(gtk.Table):
         
         
     def launch(self, button, command):
-	print button
 	self.running_process = Popen([command])
     
     def get_config(self):
-    	etree = ElementTree()
-    	config = etree.parse("config/docktable.xml")
-    	return config
+    	#etree = ETree.ElementTree()
+    	#config = etree.parse("config/docktable.xml")
+    	#return config
+        pass
     
     
     def launcher_right_clicked(self, button, event):
 	if(event.button != 3): 
             return False 
         menu = gtk.Menu()
-        item1 = gtk.MenuItem("Add a Launcher")
-        item1.connect("activate", self._show_add_launcher_gui)
-        menu.add(item1)
-        
-        menu.append(gtk.MenuItem("DUMMY Remove Launcher"))
+        addButton = gtk.MenuItem("Add a Launcher")
+        addButton.connect("activate", self._show_add_launcher_gui)
+        menu.add(addButton)
+
+        removeButton = gtk.MenuItem("Remove Launcher")
+        removeButton.connect("activate", self._remove_launcher, button)
+        menu.append(removeButton)
         menu.show_all()
         
         menu.popup(None, None, None, event.button, event.time)
@@ -117,6 +151,11 @@ class DockTable(gtk.Table):
     def _show_add_launcher_gui(self, data):
         diag = addlauncherdialog.AddLauncherDialog(self._add_single_launcher)
         diag.show()
+
+
+    def _remove_launcher(self, data, launcher):
+        launcher.destroy()
+
         
     def launcher_gui_cb(self, data, win, entry):
 	result = entry.get_text()

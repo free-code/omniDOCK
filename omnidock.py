@@ -25,7 +25,7 @@
 import sys; sys.path += ['lib/', 'config/']
 #from omnilib.specto_wrapper import SpectoWrapper
 from omnilib import gui
-import dockconfig
+import appconfig
 import gtk
 
 class omniDOCK():
@@ -35,7 +35,7 @@ class omniDOCK():
 
     def __init__(self):
 
-        self.appConfig = dockconfig.DockConfig()
+        self.appConfig = appconfig.DockConfig()
         self.appConfig.load()
         self.appConfig.save()
 

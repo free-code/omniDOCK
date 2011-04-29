@@ -9,6 +9,36 @@ def get_gizmo():
 
 print "EXAMPLE loaded"
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # # # # # # # # # An example Gizmo
 
 class TerminalGizmo: 

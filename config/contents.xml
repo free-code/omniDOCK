@@ -1,5 +1,3 @@
-<?xml version="1.0"?>
-
 <docktable-config>
         <rows>16</rows>
         <columns>4</columns>
@@ -46,4 +44,4 @@
             <top_attach>1</top_attach>
             <bottom_attach>2</bottom_attach>
         </notifier>
-</docktable-config>
+<launcher><name>Firefox</name><exec>firefox</exec><auto>true</auto><left_attach>0</left_attach><bottom_attach>2</bottom_attach><top_attach>1</top_attach><right_attach>1</right_attach><icon>/home/josh/dev/omniDOCK/images/firefox.png</icon></launcher></docktable-config>
