@@ -22,11 +22,13 @@
 # Name: omnidock.py
 # Purpose: Controller for all aspects of omniDOCK
 
-import sys; sys.path += ['lib/', 'config/']
+import sys; sys.path += ['lib/', 'config/', 'gizmos']
 #from omnilib.specto_wrapper import SpectoWrapper
 from omnilib import gui
 import appconfig
 import gtk
+import imp
+import sys, os
 
 class omniDOCK():
     """
@@ -45,7 +47,7 @@ class omniDOCK():
         #The table contains all dock widgets
         self.table = dockGui.table
         dockGui.show_all()
-        self.get_gizmos()
+        self.gizmo_import()
 
 
     def get_gizmos(self):
@@ -54,7 +56,26 @@ class omniDOCK():
 	#self.table.add_gizmo(giz)
 	pass
    
-    
+
+    def gizmo_import(self):
+            gizmoDirs = list(os.walk('./gizmos'))
+            gizmoDirs.pop(0)
+            for subDir in gizmoDirs:
+                fullPath = subDir[0]
+                name = fullPath.split('/').pop()
+                print subDir
+                f, filename, description = imp.find_module(name)
+                module = imp.load_module(name, f, filename, description)
+            
+            #print "import", name, "from", pathname, description
+             
+            
+        
+
+#import __builtin__
+#__builtin__.__import__ = gizmo_import
+
+
 if __name__ == "__main__":
     omnidock = omniDOCK()
     gtk.main()
