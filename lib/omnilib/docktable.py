@@ -47,7 +47,8 @@ class DockTable(gtk.Table):
     def _add_single_launcher(self, details, isnew):
         image  = gtk.Image()
         image.set_from_file(details["icon"])       
-        newButton = gtk.Button()
+        newButton = Launcher()
+        newButton.lname = details["name"]
         newButton.set_focus_on_click(False)
 	cmap = newButton.get_colormap()
         color = cmap.alloc_color(self.color)
@@ -87,10 +88,9 @@ class DockTable(gtk.Table):
         rootElement = self.configTree.getroot()
         launcherElement = ETree.Element("launcher")
         for elem in details.keys():
-            if type(details[elem]) is int:
-                details[elem] = str(details[elem])
+            
             thisNode = ETree.SubElement(launcherElement, elem)
-            thisNode.text = details[elem]
+            thisNode.text = str(details[elem])
         ETree.dump(rootElement)
         rootElement.append(launcherElement)
         self.configTree.save()
@@ -124,13 +124,7 @@ class DockTable(gtk.Table):
         
     def launch(self, button, command):
 	self.running_process = Popen([command])
-    
-    def get_config(self):
-    	#etree = ETree.ElementTree()
-    	#config = etree.parse("config/docktable.xml")
-    	#return config
-        pass
-    
+     
     
     def launcher_right_clicked(self, button, event):
 	if(event.button != 3): 
@@ -154,10 +148,21 @@ class DockTable(gtk.Table):
 
 
     def _remove_launcher(self, data, launcher):
+        print launcher.lname
+        allLaunchers = self.configTree.findall("launcher")
+        for item in allLaunchers:
+            if item.findtext("name") == launcher.lname:
+                print "found lname"
+                self.configTree.getroot().remove(item)
+                self.configTree.save()
+            print item
+            
+
         launcher.destroy()
 
-        
-    def launcher_gui_cb(self, data, win, entry):
-	result = entry.get_text()
-	print result
-	win.hide_all()
+
+
+class Launcher(gtk.Button):
+    def __init__(self):
+      super(Launcher, self).__init__()
+      self.lname = None
