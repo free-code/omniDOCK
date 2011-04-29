@@ -66,7 +66,20 @@ class omniDOCK():
                 print subDir
                 f, filename, description = imp.find_module(name)
                 module = imp.load_module(name, f, filename, description)
-            
+                gizmo = module.get_gizmo()
+                if len(gizmo) > 3:
+                    coords = gizmo[3]
+                    print "coords =", coords
+                    location["left_attach"] = coords[0]
+                    location["right_attach"] = coords[1]
+                    location["top_attach"] = coords[2]
+                    location["bottom_attach"] = coords[3]
+                else:
+                    location = self.table.find_space(gizmo)
+                self.table.attach(gizmo[0], location["left_attach"],
+                                         location["right_attach"],
+                                         location["top_attach"],
+                                         location["bottom_attach"])
             #print "import", name, "from", pathname, description
              
             

@@ -96,12 +96,56 @@ class DockTable(gtk.Table):
         self.configTree.save()
 
 	 
-    def add_gizmo(self,giz):
+    def find_space(self,giz):
 	#Faking the intelligent placement for testing
 	gizmo = giz[0]
 	height = giz[1][0]
 	width = giz[1][1]
-	self.attach(gizmo, 0, 4, 5, 8)
+        freeCells = self.get_free_cells()
+        cellno = 0
+        row = 0
+        holderList = []
+        #goodRows is the result of this loop, and holds lists of tuples.  Each
+        #list is a row, each tuple is the coordinates of the open cell
+        #ie goodRows[0] could be [(2,0), (2,1), (2,2)]
+        goodRows = []
+        for cell in freeCells:
+            if cell[0] != row:
+                holderList = []
+            for widthi in range(width):
+                if (cellno, widthi) in freeCells:
+                    holderList.append((cellno, widthi))
+                    if len(holderList) >= width:
+                        #print "FOUND GOOD WIDTH AT ", holderList
+                        goodRows.append(holderList)
+            cellno += 1
+
+
+        #Find good vertical space.  Currently only handles 
+        #blank rows
+        rownum = 0
+        for row in goodRows:
+            rownum += 1
+            rows = []
+            #print "Current good row:", row
+            for i in range(height):
+                try:
+                    rows.append(goodRows[rownum + i][0][0])
+                except IndexError:
+                    #As the whole idea is to parse ahead for open rows,
+                    # it's perfectly ok to get an index error for rows
+                    #that don't exist
+                    pass
+            print "rows", rows
+            result = {}
+            result["left_attach"] = row[0][1]
+            result["right_attach"] = row[0][1] + width
+            result["top_attach"] = row[0][0]
+            result["bottom_attach"] = row[0][0] + height
+            return result
+        print >> sys.stderr, "Unable to find space!"
+
+
 	                
 	                
     def update_notifier(self, service, value):
@@ -139,7 +183,7 @@ class DockTable(gtk.Table):
         menu.append(removeButton)
         menu.show_all()
         
-        menu.popup(None, None, None, event.button, event.time)
+        menu.popup(None, None, None, eve.button, event.time)
    
 
     def _show_add_launcher_gui(self, data):

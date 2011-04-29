@@ -5,7 +5,7 @@ def get_gizmo():
        It should return a gtk widget, size tuple, and name.  
        Anything else is up to you"""
     term = TerminalGizmo()
-    return (term.make_term(), (3,3), "omniDOCK Terminal")
+    return (term.make_term(), (1,1), "omniDOCK Terminal")
 
 print "EXAMPLE loaded"
 

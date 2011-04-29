@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import sys
 
 def get_gizmo():
     """This is the only method necessary to make a gizmo.
@@ -8,35 +9,6 @@ def get_gizmo():
     return (term.make_term(), (3,3), "omniDOCK Terminal")
 
 print "EXAMPLE loaded"
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # # # # # # # # # An example Gizmo
