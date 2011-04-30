@@ -71,7 +71,6 @@ class DockTable(gtk.Table):
             details["top_attach"] = first_spot[0]
             details["bottom_attach"] = first_spot[0] + 1
             
-
         self.attach(newButton, details["left_attach"],
                                details["right_attach"],
                                details["top_attach"],
@@ -85,18 +84,16 @@ class DockTable(gtk.Table):
         #Get the root node
         rootElement = self.configTree.getroot()
         launcherElement = ETree.Element("launcher")
-        for elem in details.keys():
-            
+        for elem in details.keys():        
             thisNode = ETree.SubElement(launcherElement, elem)
             thisNode.text = str(details[elem])
-        ETree.dump(rootElement)
+        #ETree.dump(rootElement)
         rootElement.append(launcherElement)
         self.configTree.save()
 
 	 
     def find_space(self,giz):
-	#Faking the intelligent placement for testing
-	gizmo = giz[0]
+        #This is horribly inefficient.  Help.
 	height = giz[1][0]
 	width = giz[1][1]
         freeCells = self.get_free_cells()
@@ -142,16 +139,16 @@ class DockTable(gtk.Table):
             return result
         print >> sys.stderr, "Unable to find space!"
 
-
-	                
 	                
     def update_notifier(self, service, value):
+        #currently unused
 	current = self.notifiers[service]
 	current.update(service, value)
 	                
 	
     def get_free_cells(self):
-	#This is the function from the awesome guy on StackOverflow.  
+	#This is the function from the awesome guy on StackOverflow.
+        #It returns a set containing the coordinates of free cells.
 	#Thanks Geoff!
 	table = self
         free_cells = set([(y,x) for x in range(table.props.n_columns) for y in range(table.props.n_rows)])
@@ -189,16 +186,11 @@ class DockTable(gtk.Table):
 
 
     def _remove_launcher(self, data, launcher):
-        print launcher.lname
         allLaunchers = self.configTree.findall("launcher")
         for item in allLaunchers:
             if item.findtext("name") == launcher.lname:
-                print "found lname"
                 self.configTree.getroot().remove(item)
                 self.configTree.save()
-            print item
-            
-
         launcher.destroy()
 
 

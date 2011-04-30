@@ -25,10 +25,11 @@
 import sys; sys.path += ['lib/', 'config/', 'gizmos']
 #from omnilib.specto_wrapper import SpectoWrapper
 from omnilib import gui
+from omnilib import gizmanager
 import appconfig
 import gtk
-import imp
-import sys, os
+#import sys, os
+#import gizmanager
 
 class omniDOCK():
     """
@@ -39,7 +40,6 @@ class omniDOCK():
 
         self.appConfig = appconfig.DockConfig()
         self.appConfig.load()
-        self.appConfig.save()
 
         #instatiate gui and apply config
         dockGui = gui.OmniDOCKGUI()
@@ -47,39 +47,18 @@ class omniDOCK():
         #The table contains all dock widgets
         self.table = dockGui.table
         dockGui.show_all()
-        self.gizmo_import()
+        self.add_gizmos(gizmanager.import_gizmos())
+        
 
 
-    def get_gizmos(self):
-	#Currently hardcoded a single gizmo for testing
-	#giz = fish.get_gizmo()
-	#self.table.add_gizmo(giz)
-	pass
-   
-
-    def gizmo_import(self):
-            gizmoDirs = list(os.walk('./gizmos'))
-            gizmoDirs.pop(0)
-            for subDir in gizmoDirs:
-                fullPath = subDir[0]
-                name = fullPath.split('/').pop()
-                f, filename, description = imp.find_module(name)
-                module = imp.load_module(name, f, filename, description)
-                gizmo = module.get_gizmo()
-                location = {}
-                if len(gizmo) > 3:
-                    coords = gizmo[3]
-                    print "coords =", coords
-                    location["left_attach"] = coords[0]
-                    location["right_attach"] = coords[1]
-                    location["top_attach"] = coords[2]
-                    location["bottom_attach"] = coords[3]
-                else:
-                    location = self.table.find_space(gizmo)
-                self.table.attach(gizmo[0], location["left_attach"],
-                                         location["right_attach"],
-                                         location["top_attach"],
-                                         location["bottom_attach"])
+    def add_gizmos(self, gizmos):
+        for gizinfo in gizmos:
+            location = gizinfo[1]
+            print gizinfo
+            self.table.attach(gizinfo[0][0], location["left_attach"],
+                             location["right_attach"],
+                             location["top_attach"],
+                             location["bottom_attach"])
 
              
 

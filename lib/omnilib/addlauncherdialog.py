@@ -4,6 +4,7 @@ class AddLauncherDialog(gtk.Window):
     def __init__(self, add_launcher_cb):
         self.add_launcher_cb = add_launcher_cb
         super(gtk.Window, self).__init__()
+        self.set_title("Add a Launcher")
         self.set_size_request(400,200)
         self.result = {}
         self.set_modal(True)
